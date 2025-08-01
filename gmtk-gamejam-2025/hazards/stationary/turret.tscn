@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2n8n1j8x47p4"]
+[gd_scene load_steps=8 format=3 uid="uid://b2n8n1j8x47p4"]
 
 [ext_resource type="Texture2D" uid="uid://ohjeovgrt4u0" path="res://assets/Sprites/start up16x19.png" id="1_dfrv5"]
 [ext_resource type="Script" uid="uid://bums2ilgdeoo8" path="res://hazards/stationary/turret.gd" id="1_rwwdm"]
+[ext_resource type="AudioStream" uid="uid://buessrhq005s5" path="res://assets/sounds/spring.wav" id="3_knkci"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwwdm"]
+size = Vector2(7, 12)
 
 [sub_resource type="Animation" id="Animation_knkci"]
 length = 0.001
@@ -16,6 +20,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TurretSprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
 }
 
 [sub_resource type="Animation" id="Animation_rwwdm"]
@@ -48,6 +64,18 @@ tracks/1/keys = {
 "method": &"shoot"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TurretSprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1.5), Vector2(2, 2.8), Vector2(2, 2)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_710tp"]
 _data = {
@@ -55,34 +83,40 @@ _data = {
 &"shoot": SubResource("Animation_rwwdm")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwwdm"]
-size = Vector2(14, 24)
-
 [node name="Turret" type="Node2D"]
 script = ExtResource("1_rwwdm")
 
 [node name="TurretSprite" type="Sprite2D" parent="."]
-position = Vector2(1, -4)
+position = Vector2(1, 12)
 scale = Vector2(2, 2)
 texture = ExtResource("1_dfrv5")
+offset = Vector2(0, -9.5)
 hframes = 7
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TurretSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TurretSprite/StaticBody2D"]
+position = Vector2(-0.5, -6)
+shape = SubResource("RectangleShape2D_rwwdm")
+
+[node name="ProjectileSpawnPoint" type="Marker2D" parent="TurretSprite"]
+unique_name_in_owner = true
+position = Vector2(-0.5, -15.3571)
+scale = Vector2(0.5, 0.357143)
 
 [node name="ShootTimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
-
-[node name="ProjectileSpawnPoint" type="Marker2D" parent="."]
-position = Vector2(0, -16)
 
 [node name="ShootingAnimation" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_710tp")
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_rwwdm")
+[node name="ShootSFX" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -43)
+stream = ExtResource("3_knkci")
+pitch_scale = 0.42
+bus = &"SFX"
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
