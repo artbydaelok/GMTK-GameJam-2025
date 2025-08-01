@@ -11,13 +11,22 @@ config_version=5
 [application]
 
 config/name="GMTK-GameJam-2025"
+run/main_scene="uid://ck22esob37nq5"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://Global.gd"
 
 [display]
 
 window/size/viewport_width=512
 window/size/viewport_height=512
+
+[gui]
+
+theme/custom_font="uid://dvhv53u531b5y"
 
 [input]
 
