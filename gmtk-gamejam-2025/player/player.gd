@@ -1,8 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 350.0
+const JUMP_VELOCITY = -500.0
 
 var facing_right : bool = true
 
@@ -32,8 +32,16 @@ func _physics_process(delta: float) -> void:
 		player_sprite.flip_h = true
 		facing_right = false
 	
-	print(velocity.normalized())
-	animation_tree.set("parameters/Move/blend_position", velocity.normalized())
+	
+	var anim_blend = Vector2.ZERO
+	anim_blend.x = velocity.sign().x
+	
+	if is_on_floor():
+		anim_blend.y = 0
+	else:
+		anim_blend.y = velocity.sign().y
+	
+	animation_tree.set("parameters/Move/blend_position", anim_blend)
 
 	
 	if direction:
