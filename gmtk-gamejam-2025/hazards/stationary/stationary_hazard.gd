@@ -4,4 +4,4 @@ extends Node2D
 
 func _on_damage_area_body_entered(body: Node2D) -> void:
 	if body is Player:
-		Global.on_player_damaged(damage)
+		Global.on_damaged.emit(damage)
