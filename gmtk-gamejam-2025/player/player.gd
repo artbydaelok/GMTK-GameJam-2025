@@ -22,9 +22,9 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle wall jump.
-	if Input.is_action_just_pressed("jump") and is_on_wall_only() and not disable_input:
-		velocity.x = get_wall_normal().x * -JUMP_VELOCITY * 0.3
-		velocity.y = JUMP_VELOCITY
+	#if Input.is_action_just_pressed("jump") and is_on_wall_only() and not disable_input:
+		#velocity.x = get_wall_normal().x * -JUMP_VELOCITY * 0.3
+		#velocity.y = JUMP_VELOCITY
 		
 	
 	# Handle jump.

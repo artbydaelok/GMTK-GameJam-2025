@@ -1,7 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2n8n1j8x47p4"]
+[gd_scene load_steps=7 format=3 uid="uid://b2n8n1j8x47p4"]
 
 [ext_resource type="Texture2D" uid="uid://ohjeovgrt4u0" path="res://assets/Sprites/start up16x19.png" id="1_dfrv5"]
 [ext_resource type="Script" uid="uid://bums2ilgdeoo8" path="res://hazards/stationary/turret.gd" id="1_rwwdm"]
+
+[sub_resource type="Animation" id="Animation_knkci"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurretSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_rwwdm"]
 resource_name = "shoot"
@@ -34,26 +49,14 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_knkci"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TurretSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_710tp"]
 _data = {
 &"RESET": SubResource("Animation_knkci"),
 &"shoot": SubResource("Animation_rwwdm")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwwdm"]
+size = Vector2(14, 24)
 
 [node name="Turret" type="Node2D"]
 script = ExtResource("1_rwwdm")
@@ -75,5 +78,11 @@ position = Vector2(0, -16)
 libraries = {
 &"": SubResource("AnimationLibrary_710tp")
 }
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_rwwdm")
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

@@ -11,6 +11,8 @@ var player : Player
 signal on_score_update(current_score : float)
 signal on_damaged(amount)
 
+var has_restart_immunity : bool = false
+
 func _ready() -> void:
 	load_scene()
 	on_damaged.connect(on_player_damaged)

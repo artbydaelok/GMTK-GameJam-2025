@@ -11,4 +11,5 @@ func on_collision(body: Node2D):
 	if body is Player:
 		print("Player Interacted")
 		Global.update_score(points)
+		get_tree().get_first_node_in_group("Level").play_collectible_sfx()
 		queue_free()

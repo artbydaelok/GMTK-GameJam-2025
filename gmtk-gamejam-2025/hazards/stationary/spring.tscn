@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8cvxql2jny8o"]
+[gd_scene load_steps=8 format=3 uid="uid://b8cvxql2jny8o"]
 
 [ext_resource type="Script" uid="uid://ckqxm5dvvp1nk" path="res://hazards/stationary/spring.gd" id="1_8mpch"]
 [ext_resource type="Texture2D" uid="uid://mogf6recynex" path="res://assets/Sprites/SpringUpTrigger.png" id="2_1lsq6"]
+[ext_resource type="AudioStream" uid="uid://buessrhq005s5" path="res://assets/sounds/spring.wav" id="3_1lsq6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_on0fa"]
 size = Vector2(22, 16)
@@ -63,5 +64,9 @@ shape = SubResource("RectangleShape2D_on0fa")
 libraries = {
 &"": SubResource("AnimationLibrary_on0fa")
 }
+
+[node name="SpringSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_1lsq6")
+bus = &"SFX"
 
 [connection signal="body_entered" from="PlayerDetect" to="." method="_on_player_detect_body_entered"]

@@ -12,12 +12,10 @@ func on_level_end_triggered(body):
 	if body is Player:
 		body.global_position = start_point.global_position
 		Global.update_score(15)
-		
+		$LoopSFX.play()
 	###
 	### Spawn new set of collectibles
 	###
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	
+func play_collectible_sfx():
+	$CollectibleSFX.play()
