@@ -1,8 +1,9 @@
 extends Node
 
+const GAME_OVER = preload("res://UI/game_over.tscn")
+
 var unlocked_double_jump := false
 var current_score : float
-
 var HP : int = 3 
 var max_HP : int = 3
 var player : Player
@@ -27,3 +28,5 @@ func on_player_damaged(amount):
 	if HP <= 0:
 		player.visible = false
 		player.set_physics_process(false)
+		var game_over_ui = GAME_OVER.instantiate()
+		add_child(game_over_ui)
