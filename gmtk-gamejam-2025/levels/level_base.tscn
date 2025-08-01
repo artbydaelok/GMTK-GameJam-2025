@@ -220,5 +220,11 @@ tile_set = SubResource("TileSet_s4aeo")
 
 [node name="StartPoint" type="Node2D" parent="."]
 
-[node name="HazardSpawner" type="Node" parent="."]
+[node name="HazardSpawner" type="Node" parent="." node_paths=PackedStringArray("player", "timer")]
 script = ExtResource("3_vmt1o")
+player = NodePath("../Player")
+timer = NodePath("../HazardSpawnTimer")
+
+[node name="HazardSpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
