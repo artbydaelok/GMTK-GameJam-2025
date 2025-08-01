@@ -24,6 +24,10 @@ Global="*res://Global.gd"
 window/size/viewport_width=512
 window/size/viewport_height=512
 
+[global_group]
+
+Player=""
+
 [gui]
 
 theme/custom_font="uid://dvhv53u531b5y"

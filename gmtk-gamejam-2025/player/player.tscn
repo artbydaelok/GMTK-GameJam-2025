@@ -180,7 +180,7 @@ states/Move/position = Vector2(478, 115)
 states/Start/position = Vector2(165, 115)
 transitions = ["Start", "Move", SubResource("AnimationNodeStateMachineTransition_boad6")]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_oul6g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

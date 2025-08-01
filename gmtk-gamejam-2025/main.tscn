@@ -11,4 +11,4 @@
 [node name="HUD" parent="." instance=ExtResource("2_0xm2m")]
 
 [node name="Projectile" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(70, 25)
+position = Vector2(108, 61)
