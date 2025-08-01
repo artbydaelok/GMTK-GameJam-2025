@@ -3,6 +3,9 @@ extends Node2D
 @export var start_point: Node2D 
 @export var level_end : Area2D
 
+@onready var hazard_spawner: Node = $HazardSpawner
+@onready var hazard_spawn_timer: Timer = $HazardSpawnTimer
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	level_end.body_entered.connect(on_level_end_triggered)

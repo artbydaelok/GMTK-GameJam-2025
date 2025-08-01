@@ -2,15 +2,24 @@ extends CanvasLayer
 
 @onready var current_score_label: Label = %CurrentScoreLabel
 @onready var health_container: HBoxContainer = %HealthContainer
+@onready var hazard_progress_bar: ProgressBar = %HazardProgress
 
 const HEART_DETAILED_EMPTY = preload("res://assets/Pixel UI & HUD/Pixel UI & HUD/Sprites/Hearts/Blue/HeartDetailed_Empty.png")
 const HEART_DETAILED_FULL = preload("res://assets/Pixel UI & HUD/Pixel UI & HUD/Sprites/Hearts/Blue/HeartDetailed_Full.png")
+
+var level : Node2D
 
 func _ready() -> void:
 	current_score_label.text = "Score\n" + str(0) + " pts"
 	setup_health()
 	Global.on_score_update.connect(update_score)
 	Global.on_damaged.connect(update_health)
+	
+	level = get_tree().get_first_node_in_group("Level")
+
+func _process(delta: float) -> void:
+	var hazard_progress_value = level.hazard_spawn_timer.time_left / level.hazard_spawn_timer.wait_time
+	hazard_progress_bar.value = (1 - hazard_progress_value) * 100.0
 
 func setup_health():
 	for i in range(Global.max_HP):
