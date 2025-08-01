@@ -1,8 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
-const SPEED = 350.0
-const JUMP_VELOCITY = -500.0
+const SPEED = 300.0
+const JUMP_VELOCITY = -450.0
 
 var facing_right : bool = true
 

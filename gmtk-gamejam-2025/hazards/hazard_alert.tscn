@@ -1,6 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ta4dnkl3rxq7"]
+[gd_scene load_steps=12 format=3 uid="uid://ta4dnkl3rxq7"]
 
 [ext_resource type="Texture2D" uid="uid://c5psgehjf20w3" path="res://assets/Pixel UI & HUD/Pixel UI & HUD/Sprites/Selectors/Reticle_Select.png" id="1_0ol8e"]
+[ext_resource type="Texture2D" uid="uid://xr7lgxixlinj" path="res://assets/Pixel UI & HUD/Pixel UI & HUD/Sprites/FormElements/Red/ArrowDown.png" id="2_oq3gk"]
+[ext_resource type="Texture2D" uid="uid://cquelq2bo0hjw" path="res://assets/Pixel UI & HUD/Pixel UI & HUD/Sprites/FormElements/Red/ArrowLeft.png" id="3_wtftk"]
+[ext_resource type="Texture2D" uid="uid://c4marphvgadd6" path="res://assets/Pixel UI & HUD/Pixel UI & HUD/Sprites/FormElements/Red/ArrowRight.png" id="4_2d2w4"]
+[ext_resource type="Texture2D" uid="uid://bs2c3qjkrqnui" path="res://assets/Pixel UI & HUD/Pixel UI & HUD/Sprites/FormElements/Red/ArrowUp.png" id="5_exo6p"]
 
 [sub_resource type="Animation" id="Animation_q5xvg"]
 length = 0.001
@@ -41,6 +45,117 @@ _data = {
 &"default": SubResource("Animation_mobdy")
 }
 
+[sub_resource type="Animation" id="Animation_a6l8s"]
+resource_name = "default"
+length = 0.400007
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArrowDown:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -25), Vector2(0, -20), Vector2(0, -25)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ArrowLeft:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(25, 0), Vector2(20, 0), Vector2(25, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ArrowRight:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-25, 0), Vector2(-20, 0), Vector2(-25, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ArrowUp:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 25), Vector2(0, 20), Vector2(0, 25)]
+}
+
+[sub_resource type="Animation" id="Animation_apwp1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArrowDown:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -25)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ArrowLeft:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(25, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ArrowRight:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-25, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ArrowUp:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 25)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4lpq0"]
+_data = {
+&"RESET": SubResource("Animation_apwp1"),
+&"default": SubResource("Animation_a6l8s")
+}
+
 [node name="HazardAlert" type="Node2D"]
 
 [node name="AlertSprite" type="Sprite2D" parent="."]
@@ -48,8 +163,30 @@ modulate = Color(0.92, 0, 0.0306666, 0.678431)
 texture = ExtResource("1_0ol8e")
 hframes = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AlertSprite"]
+[node name="AlertAnimation" type="AnimationPlayer" parent="AlertSprite"]
 libraries = {
 &"": SubResource("AnimationLibrary_wmiii")
+}
+autoplay = "default"
+
+[node name="ArrowDown" type="Sprite2D" parent="."]
+position = Vector2(0, -25)
+texture = ExtResource("2_oq3gk")
+
+[node name="ArrowLeft" type="Sprite2D" parent="."]
+position = Vector2(25, 0)
+texture = ExtResource("3_wtftk")
+
+[node name="ArrowRight" type="Sprite2D" parent="."]
+position = Vector2(-25, 0)
+texture = ExtResource("4_2d2w4")
+
+[node name="ArrowUp" type="Sprite2D" parent="."]
+position = Vector2(0, 25)
+texture = ExtResource("5_exo6p")
+
+[node name="ArrowAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4lpq0")
 }
 autoplay = "default"
