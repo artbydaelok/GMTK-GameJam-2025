@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1aiw8ttchwiw"]
+[gd_scene load_steps=8 format=3 uid="uid://c1aiw8ttchwiw"]
 
 [ext_resource type="Texture2D" uid="uid://brbnmv2rikn4l" path="res://assets/Tilesets/Main.png" id="1_c57mx"]
 [ext_resource type="Script" uid="uid://c4bshsoxnqgf5" path="res://levels/level.gd" id="1_da5si"]
 [ext_resource type="PackedScene" uid="uid://5jddbiny3f00" path="res://player/player.tscn" id="2_ctdcu"]
+[ext_resource type="Texture2D" uid="uid://dvcxdw6cvuiu2" path="res://assets/TEXTURES/PIPES_1A.PNG" id="2_ep22m"]
 [ext_resource type="Script" uid="uid://uhpl1dxd1pn2" path="res://levels/hazard_spawner.gd" id="3_vmt1o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ctdcu"]
@@ -217,6 +218,19 @@ script = ExtResource("1_da5si")
 start_point = NodePath("StartPoint")
 level_end = NodePath("LevelEnd")
 
+[node name="Parallax2D" type="Parallax2D" parent="."]
+texture_filter = 1
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(64, 64)
+repeat_times = 20
+
+[node name="Background" type="Sprite2D" parent="Parallax2D"]
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("2_ep22m")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_s4aeo")
 
@@ -230,7 +244,7 @@ player = NodePath("../Player")
 timer = NodePath("../HazardSpawnTimer")
 
 [node name="HazardSpawnTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 7.5
 autostart = true
 
 [node name="LevelEnd" type="Area2D" parent="."]

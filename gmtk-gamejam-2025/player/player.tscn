@@ -235,7 +235,7 @@ air_state = NodePath("../AirState")
 script = ExtResource("7_hg6s5")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
-zoom = Vector2(1.25, 1.25)
+zoom = Vector2(2, 2)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
