@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1aiw8ttchwiw"]
+[gd_scene load_steps=6 format=3 uid="uid://c1aiw8ttchwiw"]
 
 [ext_resource type="Texture2D" uid="uid://brbnmv2rikn4l" path="res://assets/Tilesets/Main.png" id="1_c57mx"]
 [ext_resource type="PackedScene" uid="uid://5jddbiny3f00" path="res://player/player.tscn" id="2_ctdcu"]
+[ext_resource type="Script" uid="uid://uhpl1dxd1pn2" path="res://levels/hazard_spawner.gd" id="3_vmt1o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ctdcu"]
 texture = ExtResource("1_c57mx")
@@ -142,3 +143,8 @@ sources/0 = SubResource("TileSetAtlasSource_ctdcu")
 tile_set = SubResource("TileSet_s4aeo")
 
 [node name="Player" parent="." instance=ExtResource("2_ctdcu")]
+
+[node name="StartPoint" type="Node2D" parent="."]
+
+[node name="HazardSpawner" type="Node" parent="."]
+script = ExtResource("3_vmt1o")

@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Player
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -7,6 +7,9 @@ const JUMP_VELOCITY = -400.0
 var facing_right : bool = true
 
 @onready var player_sprite: Sprite2D = $PlayerSprite
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_tree: AnimationTree = $AnimationTree
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -28,7 +31,11 @@ func _physics_process(delta: float) -> void:
 	elif direction == -1:
 		player_sprite.flip_h = true
 		facing_right = false
-		
+	
+	print(velocity.normalized())
+	animation_tree.set("parameters/Move/blend_position", velocity.normalized())
+
+	
 	if direction:
 		velocity.x = direction * SPEED
 	else:
