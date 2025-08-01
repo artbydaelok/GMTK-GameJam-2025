@@ -27,6 +27,7 @@ fill_from = Vector2(0.5, 0.5)
 gravity_scale = 0.0
 linear_velocity = Vector2(-100, 0)
 script = ExtResource("1_qw3x4")
+damage_Amount = 1
 
 [node name="Area2D" type="Area2D" parent="."]
 

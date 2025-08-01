@@ -1,16 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckhhq04f020sn"]
+[gd_scene load_steps=3 format=3 uid="uid://ckhhq04f020sn"]
 
+[ext_resource type="Script" uid="uid://bpmh5rnnx43mb" path="res://UI/game_over.gd" id="1_3y5qq"]
 [ext_resource type="FontFile" uid="uid://cs1dqecvvxsl4" path="res://assets/Fonts/Dead Revolver Typeface/Dead Revolver Typeface/Fonts/Display/OTF/DeadRevolverDisplay.otf" id="1_jawqf"]
-[ext_resource type="Texture2D" uid="uid://2b2ykdr1ytaq" path="res://assets/Pixel UI & HUD/Pixel UI & HUD/Sprites/Buttons/Blue/ButtonA_Highlighted.png" id="2_wruqd"]
-[ext_resource type="Texture2D" uid="uid://cdqv3nr8bvb72" path="res://assets/Pixel UI & HUD/Pixel UI & HUD/Sprites/Buttons/Blue/ButtonA_Pressed.png" id="3_phit2"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fmr02"]
-texture = ExtResource("2_wruqd")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jwcg4"]
-texture = ExtResource("3_phit2")
 
 [node name="Game Over" type="CanvasLayer"]
+script = ExtResource("1_3y5qq")
 
 [node name="Game Over Label" type="Label" parent="."]
 texture_filter = 1
@@ -75,18 +69,21 @@ offset_bottom = 118.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme_override_constants/separation = 30
 alignment = 1
 
 [node name="RestartButton" type="Button" parent="NavigationContainer"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_jawqf")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxTexture_fmr02")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_jwcg4")
 text = "RESTART"
 
 [node name="MainMenuButton" type="Button" parent="NavigationContainer"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_jawqf")
 theme_override_font_sizes/font_size = 20
 text = "MAIN MENU"
+
+[connection signal="button_down" from="NavigationContainer/RestartButton" to="." method="_on_restart_button_button_down"]

@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://bpj0w5obe8t10"]
+
+[ext_resource type="Texture2D" uid="uid://d1sd70iawrosk" path="res://assets/Pixel UI & HUD/Pixel UI & HUD/Sprites/Buttons/Blue/ButtonA_Unpressed.png" id="1_7m7pu"]
+[ext_resource type="Texture2D" uid="uid://2b2ykdr1ytaq" path="res://assets/Pixel UI & HUD/Pixel UI & HUD/Sprites/Buttons/Blue/ButtonA_Highlighted.png" id="2_cfsd7"]
+[ext_resource type="Texture2D" uid="uid://cdqv3nr8bvb72" path="res://assets/Pixel UI & HUD/Pixel UI & HUD/Sprites/Buttons/Blue/ButtonA_Pressed.png" id="3_qm5hq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5f78n"]
+texture = ExtResource("1_7m7pu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8wpuh"]
+texture = ExtResource("2_cfsd7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_daddk"]
+texture = ExtResource("2_cfsd7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_431p2"]
+texture = ExtResource("1_7m7pu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ovyjt"]
+texture = ExtResource("3_qm5hq")
+
+[resource]
+Button/styles/disabled = SubResource("StyleBoxTexture_5f78n")
+Button/styles/focus = SubResource("StyleBoxTexture_8wpuh")
+Button/styles/hover = SubResource("StyleBoxTexture_daddk")
+Button/styles/normal = SubResource("StyleBoxTexture_431p2")
+Button/styles/pressed = SubResource("StyleBoxTexture_ovyjt")

@@ -228,6 +228,7 @@ tile_set = SubResource("TileSet_s4aeo")
 script = ExtResource("3_vmt1o")
 player = NodePath("../Player")
 timer = NodePath("../HazardSpawnTimer")
+possible_level_hazards = null
 
 [node name="HazardSpawnTimer" type="Timer" parent="."]
 wait_time = 5.0

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceglrnsshufgd"]
+
+[ext_resource type="Script" uid="uid://bttdagff0yu4w" path="res://hazards/stationary/stationary_hazard.gd" id="1_mea2t"]
+
+[node name="StationaryHazard" type="Node2D"]
+script = ExtResource("1_mea2t")
+
+[node name="DamageArea" type="Area2D" parent="."]
+
+[connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]

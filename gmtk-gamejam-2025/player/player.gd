@@ -10,6 +10,8 @@ var facing_right : bool = true
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
 
+func _ready() -> void:
+	Global.player = self
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

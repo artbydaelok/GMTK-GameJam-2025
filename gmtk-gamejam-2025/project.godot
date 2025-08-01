@@ -27,9 +27,12 @@ window/size/viewport_height=512
 [global_group]
 
 Player=""
+HUD=""
+Level=""
 
 [gui]
 
+theme/custom="uid://bpj0w5obe8t10"
 theme/custom_font="uid://dvhv53u531b5y"
 
 [input]
