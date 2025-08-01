@@ -1,0 +1,184 @@
+[gd_scene load_steps=6 format=3 uid="uid://ck22esob37nq5"]
+
+[ext_resource type="PackedScene" uid="uid://biy23q70xcidq" path="res://levels/metrics_level.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://1rfc1wgxwy3q" path="res://UI/HUD.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://7vkq3dlotkut" path="res://Collectables/collectable_base.tscn" id="3_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://chibstbjnt2bq" path="res://icon.svg" id="4_lquwl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(122.268, 122.269)
+
+[node name="Main" type="Node"]
+
+[node name="MetricsLevel" parent="." instance=ExtResource("1_ig7tw")]
+
+[node name="HUD" parent="." instance=ExtResource("2_0xm2m")]
+
+[node name="Collectable Base" parent="." instance=ExtResource("3_1bvp3")]
+position = Vector2(-384, 218)
+
+[node name="Collectable Sprite" parent="Collectable Base" index="0"]
+texture = ExtResource("4_lquwl")
+
+[node name="CollisionShape2D" parent="Collectable Base/Area2D" index="0"]
+position = Vector2(-0.00012207, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Collectable Base2" parent="." instance=ExtResource("3_1bvp3")]
+position = Vector2(-153, 301)
+
+[node name="Collectable Sprite" parent="Collectable Base2" index="0"]
+texture = ExtResource("4_lquwl")
+
+[node name="CollisionShape2D" parent="Collectable Base2/Area2D" index="0"]
+position = Vector2(-0.00012207, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Collectable Base3" parent="." instance=ExtResource("3_1bvp3")]
+position = Vector2(275, 300)
+
+[node name="Collectable Sprite" parent="Collectable Base3" index="0"]
+texture = ExtResource("4_lquwl")
+
+[node name="CollisionShape2D" parent="Collectable Base3/Area2D" index="0"]
+position = Vector2(-0.00012207, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Collectable Base4" parent="." instance=ExtResource("3_1bvp3")]
+position = Vector2(464, 769)
+
+[node name="Collectable Sprite" parent="Collectable Base4" index="0"]
+texture = ExtResource("4_lquwl")
+
+[node name="CollisionShape2D" parent="Collectable Base4/Area2D" index="0"]
+position = Vector2(-0.00012207, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Collectable Base5" parent="." instance=ExtResource("3_1bvp3")]
+position = Vector2(-65, 756)
+
+[node name="Collectable Sprite" parent="Collectable Base5" index="0"]
+texture = ExtResource("4_lquwl")
+
+[node name="CollisionShape2D" parent="Collectable Base5/Area2D" index="0"]
+position = Vector2(-0.00012207, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Collectable Base6" parent="." instance=ExtResource("3_1bvp3")]
+position = Vector2(-643, 736)
+
+[node name="Collectable Sprite" parent="Collectable Base6" index="0"]
+texture = ExtResource("4_lquwl")
+
+[node name="CollisionShape2D" parent="Collectable Base6/Area2D" index="0"]
+position = Vector2(-0.00012207, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Collectable Base7" parent="." instance=ExtResource("3_1bvp3")]
+position = Vector2(-614, 421)
+
+[node name="Collectable Sprite" parent="Collectable Base7" index="0"]
+texture = ExtResource("4_lquwl")
+
+[node name="CollisionShape2D" parent="Collectable Base7/Area2D" index="0"]
+position = Vector2(-0.00012207, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Collectable Base8" parent="." instance=ExtResource("3_1bvp3")]
+position = Vector2(-593, 251)
+
+[node name="Collectable Sprite" parent="Collectable Base8" index="0"]
+texture = ExtResource("4_lquwl")
+
+[node name="CollisionShape2D" parent="Collectable Base8/Area2D" index="0"]
+position = Vector2(-0.00012207, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Collectable Base9" parent="." instance=ExtResource("3_1bvp3")]
+position = Vector2(504, 273)
+
+[node name="Collectable Sprite" parent="Collectable Base9" index="0"]
+texture = ExtResource("4_lquwl")
+
+[node name="CollisionShape2D" parent="Collectable Base9/Area2D" index="0"]
+position = Vector2(-0.00012207, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Collectable Base10" parent="." instance=ExtResource("3_1bvp3")]
+position = Vector2(627, 544)
+
+[node name="Collectable Sprite" parent="Collectable Base10" index="0"]
+texture = ExtResource("4_lquwl")
+
+[node name="CollisionShape2D" parent="Collectable Base10/Area2D" index="0"]
+position = Vector2(-0.00012207, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Collectable Base11" parent="." instance=ExtResource("3_1bvp3")]
+position = Vector2(119, 819)
+
+[node name="Collectable Sprite" parent="Collectable Base11" index="0"]
+texture = ExtResource("4_lquwl")
+
+[node name="CollisionShape2D" parent="Collectable Base11/Area2D" index="0"]
+position = Vector2(-0.00012207, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Collectable Base12" parent="." instance=ExtResource("3_1bvp3")]
+position = Vector2(-364, 847)
+
+[node name="Collectable Sprite" parent="Collectable Base12" index="0"]
+texture = ExtResource("4_lquwl")
+
+[node name="CollisionShape2D" parent="Collectable Base12/Area2D" index="0"]
+position = Vector2(-0.00012207, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Collectable Base13" parent="." instance=ExtResource("3_1bvp3")]
+position = Vector2(-358, 648)
+
+[node name="Collectable Sprite" parent="Collectable Base13" index="0"]
+texture = ExtResource("4_lquwl")
+
+[node name="CollisionShape2D" parent="Collectable Base13/Area2D" index="0"]
+position = Vector2(-0.00012207, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Collectable Base14" parent="." instance=ExtResource("3_1bvp3")]
+position = Vector2(285, 647)
+
+[node name="Collectable Sprite" parent="Collectable Base14" index="0"]
+texture = ExtResource("4_lquwl")
+
+[node name="CollisionShape2D" parent="Collectable Base14/Area2D" index="0"]
+position = Vector2(-0.00012207, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[editable path="Collectable Base"]
+[editable path="Collectable Base2"]
+[editable path="Collectable Base3"]
+[editable path="Collectable Base4"]
+[editable path="Collectable Base5"]
+[editable path="Collectable Base6"]
+[editable path="Collectable Base7"]
+[editable path="Collectable Base8"]
+[editable path="Collectable Base9"]
+[editable path="Collectable Base10"]
+[editable path="Collectable Base11"]
+[editable path="Collectable Base12"]
+[editable path="Collectable Base13"]
+[editable path="Collectable Base14"]
