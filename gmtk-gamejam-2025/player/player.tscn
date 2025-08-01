@@ -26,6 +26,23 @@ tracks/0/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_rgyib"]
+resource_name = "falling"
+length = 0.0666733
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [84]
+}
+
 [sub_resource type="Animation" id="Animation_rkbax"]
 resource_name = "idle"
 length = 0.466673
@@ -44,10 +61,9 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6]
 }
 
-[sub_resource type="Animation" id="Animation_boad6"]
-resource_name = "move"
-length = 0.53334
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_8t03j"]
+resource_name = "jump"
+length = 0.200007
 step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -56,27 +72,10 @@ tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [28, 29, 30, 31, 32, 33, 34, 35]
-}
-
-[sub_resource type="Animation" id="Animation_rgyib"]
-resource_name = "falling"
-length = 0.0666733
-step = 0.0666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [84]
+"values": [56, 57, 58]
 }
 
 [sub_resource type="Animation" id="Animation_hg6s5"]
@@ -96,9 +95,10 @@ tracks/0/keys = {
 "values": [70]
 }
 
-[sub_resource type="Animation" id="Animation_8t03j"]
-resource_name = "jump"
-length = 0.200007
+[sub_resource type="Animation" id="Animation_boad6"]
+resource_name = "move"
+length = 0.53334
+loop_mode = 1
 step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -107,10 +107,10 @@ tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [56, 57, 58]
+"values": [28, 29, 30, 31, 32, 33, 34, 35]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yw30f"]
@@ -171,14 +171,14 @@ blend_point_8/node = SubResource("AnimationNodeAnimation_wodsf")
 blend_point_8/pos = Vector2(1, 1)
 blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rgyib"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_boad6"]
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ebec5"]
 states/Move/node = SubResource("AnimationNodeBlendSpace2D_boad6")
-states/Move/position = Vector2(353, 115)
+states/Move/position = Vector2(478, 115)
 states/Start/position = Vector2(165, 115)
-transitions = ["Start", "Move", SubResource("AnimationNodeStateMachineTransition_rgyib")]
+transitions = ["Start", "Move", SubResource("AnimationNodeStateMachineTransition_boad6")]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_oul6g")
