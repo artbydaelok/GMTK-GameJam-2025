@@ -52,6 +52,10 @@ text = "Master"
 [node name="MasterSlider" type="HSlider" parent="Panel/MarginContainer/VBoxContainer2/Master"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+focus_neighbor_top = NodePath("../../../ButtonBack")
+focus_neighbor_bottom = NodePath("../../Music/MusicSlider")
+focus_next = NodePath("../../Music/MusicSlider")
+focus_previous = NodePath("../../../ButtonBack")
 max_value = 1.0
 step = 0.05
 
@@ -65,6 +69,10 @@ text = "Music"
 [node name="MusicSlider" type="HSlider" parent="Panel/MarginContainer/VBoxContainer2/Music"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+focus_neighbor_top = NodePath("../../Master/MasterSlider")
+focus_neighbor_bottom = NodePath("../../SFX/SFXSlider")
+focus_next = NodePath("../../SFX/SFXSlider")
+focus_previous = NodePath("../../Master/MasterSlider")
 max_value = 1.0
 step = 0.05
 
@@ -78,6 +86,10 @@ text = "SFX"
 [node name="SFXSlider" type="HSlider" parent="Panel/MarginContainer/VBoxContainer2/SFX"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+focus_neighbor_top = NodePath("../../Music/MusicSlider")
+focus_neighbor_bottom = NodePath("../../../ButtonBack")
+focus_next = NodePath("../../../ButtonBack")
+focus_previous = NodePath("../../Music/MusicSlider")
 max_value = 1.0
 step = 0.05
 
@@ -85,6 +97,10 @@ step = 0.05
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 8
+focus_neighbor_top = NodePath("../VBoxContainer2/SFX/SFXSlider")
+focus_neighbor_bottom = NodePath("../VBoxContainer2/Master/MasterSlider")
+focus_next = NodePath("../VBoxContainer2/Master/MasterSlider")
+focus_previous = NodePath("../VBoxContainer2/SFX/SFXSlider")
 text = "Back"
 
 [node name="MasterAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -100,11 +116,17 @@ bus = &"SFX"
 
 [connection signal="drag_ended" from="Panel/MarginContainer/VBoxContainer2/Master/MasterSlider" to="." method="_on_master_slider_drag_ended"]
 [connection signal="drag_started" from="Panel/MarginContainer/VBoxContainer2/Master/MasterSlider" to="." method="_on_master_slider_drag_started"]
+[connection signal="focus_entered" from="Panel/MarginContainer/VBoxContainer2/Master/MasterSlider" to="." method="_on_master_slider_drag_started"]
+[connection signal="focus_exited" from="Panel/MarginContainer/VBoxContainer2/Master/MasterSlider" to="." method="_on_master_slider_drag_ended" binds= [false]]
 [connection signal="value_changed" from="Panel/MarginContainer/VBoxContainer2/Master/MasterSlider" to="." method="_on_master_slider_value_changed"]
 [connection signal="drag_ended" from="Panel/MarginContainer/VBoxContainer2/Music/MusicSlider" to="." method="_on_music_slider_drag_ended"]
 [connection signal="drag_started" from="Panel/MarginContainer/VBoxContainer2/Music/MusicSlider" to="." method="_on_music_slider_drag_started"]
+[connection signal="focus_entered" from="Panel/MarginContainer/VBoxContainer2/Music/MusicSlider" to="." method="_on_music_slider_drag_started"]
+[connection signal="focus_exited" from="Panel/MarginContainer/VBoxContainer2/Music/MusicSlider" to="." method="_on_music_slider_drag_ended" binds= [false]]
 [connection signal="value_changed" from="Panel/MarginContainer/VBoxContainer2/Music/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="drag_ended" from="Panel/MarginContainer/VBoxContainer2/SFX/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
 [connection signal="drag_started" from="Panel/MarginContainer/VBoxContainer2/SFX/SFXSlider" to="." method="_on_sfx_slider_drag_started"]
+[connection signal="focus_entered" from="Panel/MarginContainer/VBoxContainer2/SFX/SFXSlider" to="." method="_on_sfx_slider_drag_started"]
+[connection signal="focus_exited" from="Panel/MarginContainer/VBoxContainer2/SFX/SFXSlider" to="." method="_on_sfx_slider_drag_ended" binds= [false]]
 [connection signal="value_changed" from="Panel/MarginContainer/VBoxContainer2/SFX/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="Panel/MarginContainer/ButtonBack" to="." method="_on_button_back_pressed"]

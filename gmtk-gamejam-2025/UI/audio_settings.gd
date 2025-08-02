@@ -14,6 +14,9 @@ func _ready() -> void:
 	music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(music_audio_bus))
 	sfx_slider.value = db_to_linear(AudioServer.get_bus_volume_db(sfx_audio_bus))
 
+func focus() -> void:
+	$Panel/MarginContainer/VBoxContainer2/Master/MasterSlider.grab_focus()
+	
 func _on_master_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(master_audio_bus, linear_to_db(value))
 
@@ -24,6 +27,7 @@ func _on_sfx_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(sfx_audio_bus, linear_to_db(value))
 
 func _on_button_back_pressed() -> void:
+	get_parent().focus()
 	queue_free()
 
 func _on_master_slider_drag_started() -> void:
