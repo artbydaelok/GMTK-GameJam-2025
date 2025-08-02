@@ -1,0 +1,144 @@
+[gd_scene load_steps=14 format=3 uid="uid://bebvmpoib4kuo"]
+
+[ext_resource type="Texture2D" uid="uid://2ehujv78v7ak" path="res://assets/Pixel UI & HUD/32x32_socialmedias1.png" id="1_p8ccj"]
+[ext_resource type="Script" uid="uid://til53fv1te4s" path="res://UI/main_menu.gd" id="1_tk8dj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tk8dj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d8nwk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4cwpn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f40uw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ctay"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ev3b6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k0a0m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2mudq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cafmx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tcix6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p8ccj"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tk8dj")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+offset_right = 512.0
+offset_bottom = 768.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Label" type="Label" parent="Panel/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Drop Loop"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="Panel/MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_neighbor_top = NodePath("../../HBoxContainer/DiscordButton")
+focus_neighbor_bottom = NodePath("../AudioButton")
+focus_next = NodePath("../AudioButton")
+focus_previous = NodePath("../../HBoxContainer/DiscordButton")
+text = "Play"
+
+[node name="AudioButton" type="Button" parent="Panel/MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_neighbor_top = NodePath("../PlayButton")
+focus_neighbor_bottom = NodePath("../HotToPlayButton")
+focus_next = NodePath("../HotToPlayButton")
+focus_previous = NodePath("../PlayButton")
+text = "Audio"
+
+[node name="HotToPlayButton" type="Button" parent="Panel/MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_neighbor_top = NodePath("../AudioButton")
+focus_neighbor_bottom = NodePath("../ExitButton")
+focus_next = NodePath("../ExitButton")
+focus_previous = NodePath("../AudioButton")
+text = "How to Play"
+
+[node name="ExitButton" type="Button" parent="Panel/MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_neighbor_top = NodePath("../HotToPlayButton")
+focus_neighbor_bottom = NodePath("../../HBoxContainer/SluggerpunkStudiosButton")
+focus_next = NodePath("../../HBoxContainer/SluggerpunkStudiosButton")
+focus_previous = NodePath("../HotToPlayButton")
+text = "Exit"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 72
+alignment = 1
+
+[node name="SluggerpunkStudiosButton" type="Button" parent="Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../VBoxContainer2/ExitButton")
+focus_neighbor_bottom = NodePath("../DiscordButton")
+focus_next = NodePath("../DiscordButton")
+focus_previous = NodePath("../../VBoxContainer2/ExitButton")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tk8dj")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_d8nwk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4cwpn")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_f40uw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_8ctay")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ev3b6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k0a0m")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_2mudq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cafmx")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_tcix6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p8ccj")
+text = "Sluggerpunk Studios"
+
+[node name="DiscordButton" type="TextureButton" parent="Panel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_neighbor_top = NodePath("../SluggerpunkStudiosButton")
+focus_neighbor_bottom = NodePath("../../VBoxContainer2/PlayButton")
+focus_next = NodePath("../../VBoxContainer2/PlayButton")
+focus_previous = NodePath("../SluggerpunkStudiosButton")
+texture_normal = ExtResource("1_p8ccj")
+stretch_mode = 5
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/AudioButton" to="." method="_on_audio_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/HotToPlayButton" to="." method="_on_hot_to_play_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/SluggerpunkStudiosButton" to="." method="_on_sluggerpunk_studios_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/DiscordButton" to="." method="_on_discord_button_pressed"]

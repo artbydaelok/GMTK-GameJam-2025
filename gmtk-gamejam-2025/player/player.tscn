@@ -298,5 +298,10 @@ script = ExtResource("8_rgyib")
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
 
-[node name="TeleporterController" type="Node" parent="."]
+[node name="TeleporterController" type="Node" parent="." node_paths=PackedStringArray("cooldown_timer")]
 script = ExtResource("10_8t03j")
+cooldown_timer = NodePath("CooldownTimer")
+
+[node name="CooldownTimer" type="Timer" parent="TeleporterController"]
+wait_time = 1.5
+one_shot = true

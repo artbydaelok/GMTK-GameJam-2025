@@ -16,12 +16,16 @@ var spawn_location : Array[Vector2]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	get_parent().on_level_loop.connect(on_level_loop)
 	
 	var spawn_points = get_tree().get_nodes_in_group("SpawnLocation")
 	
 	for spawner in spawn_points:
 		spawn_location.append(spawner.global_position)
+
+	on_level_loop()
+
 
 func on_level_loop():
 	var count := randi_range(min_spawn_amount, max_spawn_amount) if use_random_spawn_amount else spawn_amount
