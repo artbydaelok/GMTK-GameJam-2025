@@ -85,6 +85,7 @@ _data = {
 
 [node name="Turret" type="Node2D"]
 script = ExtResource("1_rwwdm")
+max_shake = 2.0
 
 [node name="TurretSprite" type="Sprite2D" parent="."]
 position = Vector2(1, 12)

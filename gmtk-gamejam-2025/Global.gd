@@ -28,6 +28,7 @@ func update_score(amount : float):
 
 func on_player_damaged(amount):
 	HP = clamp(HP - amount, 0, max_HP)
+	player.hit_player.play("hit")
 	
 	if HP <= 0:
 		player.visible = false

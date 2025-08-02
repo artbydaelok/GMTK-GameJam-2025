@@ -31,3 +31,11 @@ possible_level_hazards = Array[PackedScene]([ExtResource("2_ncw4t"), ExtResource
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd" index="0"]
 position = Vector2(-107, 843)
 shape = SubResource("WorldBoundaryShape2D_n3pyt")
+
+[node name="Turret" parent="." index="12" instance=ExtResource("3_n3pyt")]
+position = Vector2(82, -12)
+
+[node name="Turret2" parent="." index="13" instance=ExtResource("3_n3pyt")]
+position = Vector2(123, -12)
+max_shake = 3.0
+shake_fade = 8.0

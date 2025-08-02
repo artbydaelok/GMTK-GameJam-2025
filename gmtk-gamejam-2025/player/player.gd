@@ -10,6 +10,7 @@ var facing_right : bool = true
 @onready var player_sprite: Sprite2D = $PlayerSprite
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var hit_player: AnimationPlayer = $HitPlayer
 
 var disable_input : bool = false
 
