@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ck22esob37nq5"]
 
 [ext_resource type="PackedScene" uid="uid://1rfc1wgxwy3q" path="res://UI/HUD.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://12tp6tck5l5" path="res://levels/winding_path.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://12tp6tck5l5" path="res://levels/lvl_winding_path.tscn" id="2_h2yge"]
 
 [node name="Main" type="Node"]
 
