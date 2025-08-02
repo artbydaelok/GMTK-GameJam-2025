@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cflhn8u18opvo"]
+
+[ext_resource type="Texture2D" uid="uid://bm5f0gb02tgbe" path="res://assets/Pixel UI & HUD/Input20Prompts20Pixel2016C397.png" id="1_cjyj6"]
+
+[node name="ButtonTextureRegion" type="Sprite2D"]
+texture = ExtResource("1_cjyj6")
+region_enabled = true
+region_rect = Rect2(17, -1, 16, 16)

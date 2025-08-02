@@ -2,6 +2,7 @@ extends Control
 
 var level_one = preload("res://main.tscn")
 var audio = preload("res://UI/audio_settings.tscn")
+var how_to_play = preload("res://UI/how_to_play.tscn")
 
 func _ready() -> void:
 	focus()
@@ -15,14 +16,17 @@ func _on_play_button_pressed() -> void:
 
 
 func _on_audio_button_pressed() -> void:
+	$Panel/MarginContainer/VBoxContainer2/AudioButton.release_focus()
 	var instance = audio.instantiate()
 	add_child(instance)
 	instance.focus()
 
 
 func _on_hot_to_play_button_pressed() -> void:
-	#TODO: change to the how to play scene
-	pass # Replace with function body.
+	$Panel/MarginContainer/VBoxContainer2/HotToPlayButton.release_focus()
+	var instance = how_to_play.instantiate()
+	add_child(instance)
+	instance.focus()
 
 
 func _on_exit_button_pressed() -> void:
