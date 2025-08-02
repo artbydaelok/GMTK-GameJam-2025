@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://b2n8n1j8x47p4"]
 
-[ext_resource type="Texture2D" uid="uid://ohjeovgrt4u0" path="res://assets/Sprites/start up16x19.png" id="1_dfrv5"]
 [ext_resource type="Script" uid="uid://bums2ilgdeoo8" path="res://hazards/stationary/turret.gd" id="1_rwwdm"]
+[ext_resource type="Texture2D" uid="uid://hinxcsnkwr1n" path="res://assets/Sprites/turret-color.png" id="2_knkci"]
 [ext_resource type="AudioStream" uid="uid://buessrhq005s5" path="res://assets/sounds/spring.wav" id="3_knkci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwwdm"]
-size = Vector2(7, 12)
+size = Vector2(7, 13)
 
 [sub_resource type="Animation" id="Animation_knkci"]
 length = 0.001
@@ -19,7 +19,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [3]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -36,7 +36,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_rwwdm"]
 resource_name = "shoot"
-length = 0.466673
+length = 0.53334
 step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -45,10 +45,10 @@ tracks/0/path = NodePath("TurretSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.33334, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.33334, 0.4, 0.4667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 5, 6, 1, 0]
+"values": [0, 1, 2, 5, 6, 1, 0, 3]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -90,14 +90,15 @@ max_shake = 2.0
 [node name="TurretSprite" type="Sprite2D" parent="."]
 position = Vector2(1, 12)
 scale = Vector2(2, 2)
-texture = ExtResource("1_dfrv5")
+texture = ExtResource("2_knkci")
 offset = Vector2(0, -9.5)
 hframes = 7
+frame = 3
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TurretSprite"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TurretSprite/StaticBody2D"]
-position = Vector2(-0.5, -6)
+position = Vector2(-0.5, -6.5)
 shape = SubResource("RectangleShape2D_rwwdm")
 
 [node name="ProjectileSpawnPoint" type="Marker2D" parent="TurretSprite"]
