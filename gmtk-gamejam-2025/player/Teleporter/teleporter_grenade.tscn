@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://brt6qtaatpy2b"]
+
+[ext_resource type="Script" uid="uid://4cy35q4pu66k" path="res://player/Teleporter/teleporter_grenade.gd" id="1_rfo7x"]
+
+[sub_resource type="Gradient" id="Gradient_sxwf2"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.383285, 0.533141)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0.913725, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rfo7x"]
+gradient = SubResource("Gradient_sxwf2")
+width = 16
+height = 16
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sxwf2"]
+radius = 4.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rfo7x"]
+
+[node name="TeleporterGrenade" type="RigidBody2D"]
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_rfo7x")
+
+[node name="PortalGrenadeSprite" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_rfo7x")
+
+[node name="GrenadeCollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sxwf2")
+disabled = true
+
+[node name="SelfDestroy" type="Timer" parent="."]
+
+[node name="PlayerShapeCast" type="ShapeCast2D" parent="."]
+position = Vector2(0, -14)
+shape = SubResource("CapsuleShape2D_rfo7x")
+target_position = Vector2(0, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
