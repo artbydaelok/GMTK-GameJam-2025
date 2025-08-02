@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://imum8n7fqbg1"]
+
+[ext_resource type="Script" uid="uid://bpfbgpikqw3ky" path="res://player/Teleporter/teleporter.gd" id="1_5l852"]
+
+[node name="Teleporter" type="Node2D" groups=["Portal"]]
+script = ExtResource("1_5l852")
+
+[node name="PlayerDetect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetect"]
+
+[node name="TeleporterSprite" type="Sprite2D" parent="."]
+
+[node name="TeleporterAnimation" type="AnimationPlayer" parent="."]
