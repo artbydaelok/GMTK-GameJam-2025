@@ -1,15 +1,16 @@
 extends Control
 
-@export var level_one : PackedScene = preload("res://main.tscn")
+var level_one = preload("res://main.tscn")
+var audio = preload("res://UI/audio_settings.tscn")
 
 func _on_play_button_pressed() -> void:
 	#TODO: check for save file on database and load data.
 	get_tree().change_scene_to_packed(level_one)
 
 
-func _on_settings_button_pressed() -> void:
-	#TODO: change to the settings scene
-	pass # Replace with function body.
+func _on_audio_button_pressed() -> void:
+	var instance = audio.instantiate()
+	add_child(instance)
 
 
 func _on_hot_to_play_button_pressed() -> void:

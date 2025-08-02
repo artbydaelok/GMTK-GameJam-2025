@@ -34,7 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tk8dj")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,54 +42,56 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
 layout_mode = 2
+offset_right = 512.0
+offset_bottom = 768.0
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer"]
+[node name="Label" type="Label" parent="Panel/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 40
 text = "Drop Loop"
 horizontal_alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="PlayButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer2"]
+[node name="PlayButton" type="Button" parent="Panel/MarginContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 focus_neighbor_top = NodePath("../../HBoxContainer/DiscordButton")
-focus_neighbor_bottom = NodePath("../SettingsButton")
-focus_next = NodePath("../SettingsButton")
+focus_neighbor_bottom = NodePath("../AudioButton")
+focus_next = NodePath("../AudioButton")
 focus_previous = NodePath("../../HBoxContainer/DiscordButton")
 text = "Play"
 
-[node name="SettingsButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer2"]
+[node name="AudioButton" type="Button" parent="Panel/MarginContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 focus_neighbor_top = NodePath("../PlayButton")
 focus_neighbor_bottom = NodePath("../HotToPlayButton")
 focus_next = NodePath("../HotToPlayButton")
 focus_previous = NodePath("../PlayButton")
-text = "Settings"
+text = "Audio"
 
-[node name="HotToPlayButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer2"]
+[node name="HotToPlayButton" type="Button" parent="Panel/MarginContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-focus_neighbor_top = NodePath("../SettingsButton")
+focus_neighbor_top = NodePath("../AudioButton")
 focus_neighbor_bottom = NodePath("../ExitButton")
 focus_next = NodePath("../ExitButton")
-focus_previous = NodePath("../SettingsButton")
+focus_previous = NodePath("../AudioButton")
 text = "How to Play"
 
-[node name="ExitButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer2"]
+[node name="ExitButton" type="Button" parent="Panel/MarginContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 focus_neighbor_top = NodePath("../HotToPlayButton")
@@ -98,14 +100,14 @@ focus_next = NodePath("../../HBoxContainer/SluggerpunkStudiosButton")
 focus_previous = NodePath("../HotToPlayButton")
 text = "Exit"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 72
 alignment = 1
 
-[node name="SluggerpunkStudiosButton" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]
+[node name="SluggerpunkStudiosButton" type="Button" parent="Panel/MarginContainer/HBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../../VBoxContainer2/ExitButton")
 focus_neighbor_bottom = NodePath("../DiscordButton")
@@ -124,7 +126,7 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_tcix6")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_p8ccj")
 text = "Sluggerpunk Studios"
 
-[node name="DiscordButton" type="TextureButton" parent="PanelContainer/MarginContainer/HBoxContainer"]
+[node name="DiscordButton" type="TextureButton" parent="Panel/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 focus_neighbor_top = NodePath("../SluggerpunkStudiosButton")
@@ -134,9 +136,9 @@ focus_previous = NodePath("../SluggerpunkStudiosButton")
 texture_normal = ExtResource("1_p8ccj")
 stretch_mode = 5
 
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer2/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer2/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer2/HotToPlayButton" to="." method="_on_hot_to_play_button_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer2/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/SluggerpunkStudiosButton" to="." method="_on_sluggerpunk_studios_button_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/DiscordButton" to="." method="_on_discord_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/AudioButton" to="." method="_on_audio_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/HotToPlayButton" to="." method="_on_hot_to_play_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/SluggerpunkStudiosButton" to="." method="_on_sluggerpunk_studios_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/DiscordButton" to="." method="_on_discord_button_pressed"]
