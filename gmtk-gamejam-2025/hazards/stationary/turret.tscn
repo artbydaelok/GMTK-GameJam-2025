@@ -118,6 +118,7 @@ libraries = {
 position = Vector2(0, -43)
 stream = ExtResource("3_knkci")
 pitch_scale = 0.42
+max_distance = 500.0
 bus = &"SFX"
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
