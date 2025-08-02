@@ -51,11 +51,27 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="Label" type="Label" parent="Panel/MarginContainer"]
+[node name="GameTitleContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="GameTitle" type="Label" parent="Panel/MarginContainer/GameTitleContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0.862745, 1, 1)
+theme_override_constants/shadow_offset_y = 4
 theme_override_font_sizes/font_size = 40
-text = "Drop Loop"
+text = "drop"
+horizontal_alignment = 1
+
+[node name="GameTitle2" type="Label" parent="Panel/MarginContainer/GameTitleContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0.862745, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0.792157, 1)
+theme_override_constants/shadow_offset_y = 4
+theme_override_font_sizes/font_size = 40
+text = "loop"
 horizontal_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Panel/MarginContainer"]
