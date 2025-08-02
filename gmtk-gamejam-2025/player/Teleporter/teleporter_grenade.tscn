@@ -18,6 +18,7 @@ fill_from = Vector2(0.5, 0.5)
 radius = 4.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rfo7x"]
+height = 42.0
 
 [node name="TeleporterGrenade" type="RigidBody2D"]
 contact_monitor = true
@@ -32,10 +33,14 @@ shape = SubResource("CircleShape2D_sxwf2")
 disabled = true
 
 [node name="SelfDestroy" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+autostart = true
 
 [node name="PlayerShapeCast" type="ShapeCast2D" parent="."]
-position = Vector2(0, -14)
+position = Vector2(0, -20)
 shape = SubResource("CapsuleShape2D_rfo7x")
 target_position = Vector2(0, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="SelfDestroy" to="." method="_on_self_destroy_timeout"]
