@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://t4nwafq0rfkf"]
+
+[ext_resource type="Script" uid="uid://d087bccthx8rk" path="res://vfx/end_level_portal_vfx.gd" id="1_q76un"]
+
+[sub_resource type="Gradient" id="Gradient_q76un"]
+offsets = PackedFloat32Array(0, 0.276657, 0.455331)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fkwv4"]
+gradient = SubResource("Gradient_q76un")
+width = 8
+height = 8
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Curve" id="Curve_q4vnk"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.252033, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_fkwv4"]
+offsets = PackedFloat32Array(0.465672, 0.468657, 0.471642, 0.486567, 0.498507, 0.632836)
+colors = PackedColorArray(1, 1, 1, 0, 0.144063, 0.144063, 0.144063, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.299547, 0.299547, 0.299547, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_q4vnk"]
+gradient = SubResource("Gradient_fkwv4")
+width = 32
+height = 32
+fill_to = Vector2(0, 1)
+
+[node name="EndLevelPortalVFX" type="CPUParticles2D"]
+amount = 128
+texture = SubResource("GradientTexture2D_fkwv4")
+lifetime = 2.5
+emission_shape = 3
+emission_rect_extents = Vector2(512, 1)
+direction = Vector2(0, -1)
+spread = 75.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 15.0
+initial_velocity_max = 50.0
+radial_accel_min = -15.0
+radial_accel_max = 15.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_q4vnk")
+script = ExtResource("1_q76un")
+
+[node name="LevelEndLine" type="Line2D" parent="."]
+texture_repeat = 2
+width = 96.0
+texture = SubResource("GradientTexture2D_q4vnk")
+texture_mode = 1
