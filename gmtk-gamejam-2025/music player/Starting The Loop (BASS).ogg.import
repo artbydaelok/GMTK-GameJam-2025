@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dxffk1ccfeedh"
+path="res://.godot/imported/Starting The Loop (BASS).ogg-5e2041484502cb74771f28b3421ed06f.oggvorbisstr"
+
+[deps]
+
+source_file="res://music player/Starting The Loop (BASS).ogg"
+dest_files=["res://.godot/imported/Starting The Loop (BASS).ogg-5e2041484502cb74771f28b3421ed06f.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=86.0
+beat_count=0
+bar_beats=4
