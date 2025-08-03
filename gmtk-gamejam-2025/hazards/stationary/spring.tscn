@@ -67,6 +67,7 @@ libraries = {
 
 [node name="SpringSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_1lsq6")
+pitch_scale = 1.5
 bus = &"SFX"
 
 [connection signal="body_entered" from="PlayerDetect" to="." method="_on_player_detect_body_entered"]

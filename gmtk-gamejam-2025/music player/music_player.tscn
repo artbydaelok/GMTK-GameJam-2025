@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://cts6mc8l1mbkq"]
+
+[ext_resource type="AudioStream" uid="uid://dxffk1ccfeedh" path="res://music player/Starting The Loop (BASS).ogg" id="1_440ay"]
+[ext_resource type="AudioStream" uid="uid://djy4fpbptrlyl" path="res://music player/Starting The Loop (DRUMS).ogg" id="2_12jod"]
+[ext_resource type="Script" uid="uid://uxmwca0cb2m1" path="res://music player/music_player.gd" id="2_440ay"]
+[ext_resource type="AudioStream" uid="uid://bw2mhj5ueycir" path="res://music player/Starting The Loop (KEYS).ogg" id="3_cw7r2"]
+[ext_resource type="AudioStream" uid="uid://bt0eojgey677g" path="res://music player/Starting The Loop (VOCALOID).ogg" id="4_5ouhn"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_ox01n"]
+stream_count = 4
+stream_0/stream = ExtResource("1_440ay")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("2_12jod")
+stream_1/volume = -60.0
+stream_2/stream = ExtResource("3_cw7r2")
+stream_2/volume = -60.0
+stream_3/stream = ExtResource("4_5ouhn")
+stream_3/volume = -60.0
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+stream = SubResource("AudioStreamSynchronized_ox01n")
+autoplay = true
+bus = &"Music"
+script = ExtResource("2_440ay")
