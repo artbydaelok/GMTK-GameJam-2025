@@ -264,3 +264,4 @@ autostart = true
 [node name="HUD" parent="." instance=ExtResource("8_cnvg6")]
 
 [node name="MusicPlayer" parent="." instance=ExtResource("9_p3adb")]
+autoplay = false
