@@ -101,12 +101,12 @@ text = "Play"
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 focus_neighbor_top = NodePath("../PlayButton")
-focus_neighbor_bottom = NodePath("../HotToPlayButton")
-focus_next = NodePath("../HotToPlayButton")
+focus_neighbor_bottom = NodePath("../HowToPlayButton")
+focus_next = NodePath("../HowToPlayButton")
 focus_previous = NodePath("../PlayButton")
 text = "Audio"
 
-[node name="HotToPlayButton" type="Button" parent="Panel/MarginContainer/VBoxContainer2"]
+[node name="HowToPlayButton" type="Button" parent="Panel/MarginContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 focus_neighbor_top = NodePath("../AudioButton")
@@ -118,10 +118,10 @@ text = "How to Play"
 [node name="ExitButton" type="Button" parent="Panel/MarginContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-focus_neighbor_top = NodePath("../HotToPlayButton")
+focus_neighbor_top = NodePath("../HowToPlayButton")
 focus_neighbor_bottom = NodePath("../../HBoxContainer/SluggerpunkStudiosButton")
 focus_next = NodePath("../../HBoxContainer/SluggerpunkStudiosButton")
-focus_previous = NodePath("../HotToPlayButton")
+focus_previous = NodePath("../HowToPlayButton")
 text = "Exit"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
@@ -166,7 +166,7 @@ autostart = true
 
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/AudioButton" to="." method="_on_audio_button_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/HotToPlayButton" to="." method="_on_hot_to_play_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/SluggerpunkStudiosButton" to="." method="_on_sluggerpunk_studios_button_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/DiscordButton" to="." method="_on_discord_button_pressed"]

@@ -1,6 +1,7 @@
 extends Control
 
-var level_one = preload("res://main.tscn")
+
+var level_selection = preload("res://UI/level_selection.tscn")
 var audio = preload("res://UI/audio_settings.tscn")
 var how_to_play = preload("res://UI/how_to_play.tscn")
 
@@ -48,8 +49,9 @@ func focus() -> void:
 	$Panel/MarginContainer/VBoxContainer2/PlayButton.grab_focus()
 
 func _on_play_button_pressed() -> void:
-	#TODO: check for save file on database and load data.
-	get_tree().change_scene_to_packed(level_one)
+	var instance = level_selection.instantiate()
+	add_child(instance)
+	instance.focus()
 
 
 func _on_audio_button_pressed() -> void:
@@ -59,8 +61,8 @@ func _on_audio_button_pressed() -> void:
 	instance.focus()
 
 
-func _on_hot_to_play_button_pressed() -> void:
-	$Panel/MarginContainer/VBoxContainer2/HotToPlayButton.release_focus()
+func _on_how_to_play_button_pressed() -> void:
+	$Panel/MarginContainer/VBoxContainer2/HowToPlayButton.release_focus()
 	var instance = how_to_play.instantiate()
 	add_child(instance)
 	instance.focus()
