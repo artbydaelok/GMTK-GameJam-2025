@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://ckkme50buibio"]
+
+[ext_resource type="Texture2D" uid="uid://mtvfat8p105y" path="res://assets/Sprites/Bumper.png" id="1_neen8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk570"]
+atlas = ExtResource("1_neen8")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2wx0"]
+atlas = ExtResource("1_neen8")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gppie"]
+atlas = ExtResource("1_neen8")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ptjp"]
+atlas = ExtResource("1_neen8")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md4fy"]
+atlas = ExtResource("1_neen8")
+region = Rect2(256, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uk570")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2wx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gppie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ptjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md4fy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]

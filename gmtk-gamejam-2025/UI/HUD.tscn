@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://1rfc1wgxwy3q"]
+[gd_scene load_steps=6 format=3 uid="uid://1rfc1wgxwy3q"]
 
 [ext_resource type="Script" uid="uid://pnnl03u2h7tq" path="res://UI/hud.gd" id="1_yixhe"]
+[ext_resource type="Script" uid="uid://w0qtwwhbiela" path="res://UI/animated_texture_rect_.gd" id="2_ijstf"]
+[ext_resource type="SpriteFrames" uid="uid://ckkme50buibio" path="res://UI/hazard_animations/bumper.tres" id="3_4n7mi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yixhe"]
 bg_color = Color(0.251258, 0.177857, 0.73154, 0.360784)
@@ -49,17 +51,22 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="HazardIndicator" type="VBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 
-[node name="NextHazardLabel" type="Label" parent="MarginContainer/HazardIndicator"]
+[node name="HazardIndicator" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="NextHazardLabel" type="Label" parent="MarginContainer/HBoxContainer/HazardIndicator"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Next Hazard in..."
 
-[node name="HazardProgress" type="ProgressBar" parent="MarginContainer/HazardIndicator"]
+[node name="HazardProgress" type="ProgressBar" parent="MarginContainer/HBoxContainer/HazardIndicator"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
@@ -67,3 +74,10 @@ theme_override_styles/background = SubResource("StyleBoxFlat_yixhe")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ijstf")
 value = 44.79
 show_percentage = false
+
+[node name="AnimatedTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+script = ExtResource("2_ijstf")
+sprites = ExtResource("3_4n7mi")
+auto_play = true
+metadata/_custom_type_script = "uid://w0qtwwhbiela"
