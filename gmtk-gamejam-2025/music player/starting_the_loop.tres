@@ -1,0 +1,17 @@
+[gd_resource type="AudioStreamSynchronized" load_steps=5 format=3 uid="uid://t3navf7p6y41"]
+
+[ext_resource type="AudioStream" uid="uid://dxffk1ccfeedh" path="res://music player/Starting The Loop (BASS).ogg" id="1_6ixej"]
+[ext_resource type="AudioStream" uid="uid://djy4fpbptrlyl" path="res://music player/Starting The Loop (DRUMS).ogg" id="2_03lqh"]
+[ext_resource type="AudioStream" uid="uid://bw2mhj5ueycir" path="res://music player/Starting The Loop (KEYS).ogg" id="3_vk7pc"]
+[ext_resource type="AudioStream" uid="uid://bt0eojgey677g" path="res://music player/Starting The Loop (VOCALOID).ogg" id="4_du56i"]
+
+[resource]
+stream_count = 4
+stream_0/stream = ExtResource("1_6ixej")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("2_03lqh")
+stream_1/volume = -60.0
+stream_2/stream = ExtResource("3_vk7pc")
+stream_2/volume = -60.0
+stream_3/stream = ExtResource("4_du56i")
+stream_3/volume = -60.0
