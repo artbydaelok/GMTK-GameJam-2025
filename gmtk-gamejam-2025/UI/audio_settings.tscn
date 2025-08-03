@@ -125,19 +125,26 @@ bus = &"Music"
 stream = ExtResource("2_v4rch")
 bus = &"SFX"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="drag_ended" from="Panel/MarginContainer/VBoxContainer2/Master/MasterSlider" to="." method="_on_master_slider_drag_ended"]
 [connection signal="drag_started" from="Panel/MarginContainer/VBoxContainer2/Master/MasterSlider" to="." method="_on_master_slider_drag_started"]
 [connection signal="focus_entered" from="Panel/MarginContainer/VBoxContainer2/Master/MasterSlider" to="." method="_on_master_slider_drag_started"]
 [connection signal="focus_exited" from="Panel/MarginContainer/VBoxContainer2/Master/MasterSlider" to="." method="_on_master_slider_drag_ended" binds= [false]]
+[connection signal="mouse_entered" from="Panel/MarginContainer/VBoxContainer2/Master/MasterSlider" to="." method="_on_entered"]
 [connection signal="value_changed" from="Panel/MarginContainer/VBoxContainer2/Master/MasterSlider" to="." method="_on_master_slider_value_changed"]
 [connection signal="drag_ended" from="Panel/MarginContainer/VBoxContainer2/Music/MusicSlider" to="." method="_on_music_slider_drag_ended"]
 [connection signal="drag_started" from="Panel/MarginContainer/VBoxContainer2/Music/MusicSlider" to="." method="_on_music_slider_drag_started"]
 [connection signal="focus_entered" from="Panel/MarginContainer/VBoxContainer2/Music/MusicSlider" to="." method="_on_music_slider_drag_started"]
 [connection signal="focus_exited" from="Panel/MarginContainer/VBoxContainer2/Music/MusicSlider" to="." method="_on_music_slider_drag_ended" binds= [false]]
+[connection signal="mouse_entered" from="Panel/MarginContainer/VBoxContainer2/Music/MusicSlider" to="." method="_on_entered"]
 [connection signal="value_changed" from="Panel/MarginContainer/VBoxContainer2/Music/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="drag_ended" from="Panel/MarginContainer/VBoxContainer2/SFX/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
 [connection signal="drag_started" from="Panel/MarginContainer/VBoxContainer2/SFX/SFXSlider" to="." method="_on_sfx_slider_drag_started"]
 [connection signal="focus_entered" from="Panel/MarginContainer/VBoxContainer2/SFX/SFXSlider" to="." method="_on_sfx_slider_drag_started"]
 [connection signal="focus_exited" from="Panel/MarginContainer/VBoxContainer2/SFX/SFXSlider" to="." method="_on_sfx_slider_drag_ended" binds= [false]]
+[connection signal="mouse_entered" from="Panel/MarginContainer/VBoxContainer2/SFX/SFXSlider" to="." method="_on_entered"]
 [connection signal="value_changed" from="Panel/MarginContainer/VBoxContainer2/SFX/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="focus_entered" from="Panel/MarginContainer/ButtonBack" to="." method="_on_entered"]
+[connection signal="mouse_entered" from="Panel/MarginContainer/ButtonBack" to="." method="_on_entered"]
 [connection signal="pressed" from="Panel/MarginContainer/ButtonBack" to="." method="_on_button_back_pressed"]

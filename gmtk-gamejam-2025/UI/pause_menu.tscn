@@ -78,6 +78,8 @@ focus_neighbor_top = NodePath("../HowToPlayButton")
 focus_previous = NodePath("../HowToPlayButton")
 text = "Main Menu"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/AudioButton" to="." method="_on_audio_button_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]

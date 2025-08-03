@@ -135,8 +135,11 @@ extends Control
 															"20": Rect2(391,357,16,16),
 															"Select": Rect2(340,357,16,16)}
 
+@onready var audio_streamer = $AudioStreamPlayer2D
 
 var controller_name = null
+var button_click_sfx = preload("res://assets/sounds/Click sound 1.wav")
+var button_hover_sfx = preload("res://assets/sounds/Hover over button sound 1.wav")
 
 func _ready() -> void:
 	set_button_textures("keyboard")
@@ -179,5 +182,14 @@ func _input(event):
 
 
 func _on_button_pressed() -> void:
+	play_button_click_sfx()
 	get_parent().focus()
 	queue_free()
+	
+func play_button_click_sfx() -> void:
+	audio_streamer.stream = button_click_sfx
+	audio_streamer.play()
+
+func _on_entered() -> void:
+	audio_streamer.stream = button_hover_sfx
+	audio_streamer.play()
