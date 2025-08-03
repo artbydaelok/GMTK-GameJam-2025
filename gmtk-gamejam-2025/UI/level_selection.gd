@@ -2,11 +2,12 @@ extends Control
 
 @onready var audio_streamer = $AudioStreamPlayer2D
 
-var level_one = preload("res://main.tscn")
+var level_one = preload("res://levels/metrics_level.tscn")
 var level_two = preload("res://levels/lvl_footrace.tscn")
 var level_three = preload("res://levels/lvl_uturn.tscn")
 var level_four = preload("res://levels/lvl_winding_path.tscn")
-var level_five = preload("res://levels/metrics_level.tscn")
+var level_five = preload("res://levels/lvl_drop.tscn")
+
 var button_click_sfx = preload("res://assets/sounds/Click sound 1.wav")
 var button_hover_sfx = preload("res://assets/sounds/Hover over button sound 1.wav")
 
