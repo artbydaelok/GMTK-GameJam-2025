@@ -50,6 +50,7 @@ func change_font():
 	#game_title_loop.add_theme_font_override("font", fonts.pick_random())
 	
 func focus() -> void:
+	await get_tree().create_timer(.5).timeout
 	$Panel/MarginContainer/VBoxContainer2/PlayButton.grab_focus()
 
 func _on_play_button_pressed() -> void:

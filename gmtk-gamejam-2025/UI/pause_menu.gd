@@ -9,11 +9,12 @@ var how_to_play = preload("res://UI/how_to_play.tscn")
 var button_click_sfx = preload("res://assets/sounds/Click sound 1.wav")
 var button_hover_sfx = preload("res://assets/sounds/Hover over button sound 1.wav")
 
-func _ready() -> void:	
+func _ready() -> void:
 	get_tree().paused = true
 	focus()
 	
 func focus() -> void:
+	await get_tree().create_timer(.5).timeout
 	$Panel/MarginContainer/VBoxContainer2/ResumeButton.grab_focus()
 
 func _on_resume_button_pressed() -> void:

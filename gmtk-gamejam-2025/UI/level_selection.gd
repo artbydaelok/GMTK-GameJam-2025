@@ -15,6 +15,7 @@ func _ready() -> void:
 	focus()
 	
 func focus() -> void:
+	await get_tree().create_timer(.5).timeout
 	$Panel/MarginContainer/VBoxContainer/VBoxContainer2/LevelOne.grab_focus()
 
 func _on_level_one_pressed() -> void:

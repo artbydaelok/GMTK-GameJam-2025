@@ -7,6 +7,8 @@ var current_score : int
 var HP : int = 3 
 var max_HP : int = 3
 var player : Player
+var using_controller = false
+var controller_name = null
 
 signal on_score_update(current_score : float)
 signal on_damaged(amount)
@@ -36,3 +38,9 @@ func on_player_damaged(amount):
 		var game_over_ui = GAME_OVER.instantiate()
 		var hud = get_tree().get_first_node_in_group("HUD")
 		hud.add_child(game_over_ui)
+		
+func _input(event):
+	if event is InputEventKey and using_controller == true: using_controller = false
+	elif event is InputEventJoypadButton and !using_controller:
+		using_controller = true
+		controller_name = Input.get_joy_name(0)
