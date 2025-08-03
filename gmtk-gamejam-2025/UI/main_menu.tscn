@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://bebvmpoib4kuo"]
+[gd_scene load_steps=15 format=3 uid="uid://bebvmpoib4kuo"]
 
 [ext_resource type="Texture2D" uid="uid://2ehujv78v7ak" path="res://assets/Pixel UI & HUD/32x32_socialmedias1.png" id="1_p8ccj"]
 [ext_resource type="Script" uid="uid://til53fv1te4s" path="res://UI/main_menu.gd" id="1_tk8dj"]
+[ext_resource type="FontFile" uid="uid://6wtxqi1tje8" path="res://assets/Fonts/Dead Revolver Typeface/Dead Revolver Typeface/Fonts/Game/OTF/DeadRevolverGame.otf" id="2_d8nwk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tk8dj"]
 
@@ -55,24 +56,31 @@ theme_override_constants/margin_bottom = 50
 layout_mode = 2
 alignment = 1
 
-[node name="GameTitle" type="Label" parent="Panel/MarginContainer/GameTitleContainer"]
+[node name="GameTitleDrop" type="Label" parent="Panel/MarginContainer/GameTitleContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(170, 100)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0.862745, 1, 1)
 theme_override_constants/shadow_offset_y = 4
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("2_d8nwk")
+theme_override_font_sizes/font_size = 60
 text = "drop"
-horizontal_alignment = 1
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="GameTitle2" type="Label" parent="Panel/MarginContainer/GameTitleContainer"]
+[node name="GameTitleLoop" type="Label" parent="Panel/MarginContainer/GameTitleContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(170, 100)
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0.862745, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0.792157, 1)
 theme_override_constants/shadow_offset_y = 4
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("2_d8nwk")
+theme_override_font_sizes/font_size = 60
 text = "loop"
-horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Panel/MarginContainer"]
 layout_mode = 2
@@ -152,9 +160,14 @@ focus_previous = NodePath("../SluggerpunkStudiosButton")
 texture_normal = ExtResource("1_p8ccj")
 stretch_mode = 5
 
+[node name="FontTimer" type="Timer" parent="."]
+wait_time = 0.15
+autostart = true
+
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/AudioButton" to="." method="_on_audio_button_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/HotToPlayButton" to="." method="_on_hot_to_play_button_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/SluggerpunkStudiosButton" to="." method="_on_sluggerpunk_studios_button_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/DiscordButton" to="." method="_on_discord_button_pressed"]
+[connection signal="timeout" from="FontTimer" to="." method="_on_font_timer_timeout"]
