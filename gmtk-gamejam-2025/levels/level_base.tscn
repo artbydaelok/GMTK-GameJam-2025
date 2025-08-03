@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1aiw8ttchwiw"]
+[gd_scene load_steps=12 format=3 uid="uid://c1aiw8ttchwiw"]
 
 [ext_resource type="Texture2D" uid="uid://brbnmv2rikn4l" path="res://assets/Tilesets/Main.png" id="1_c57mx"]
 [ext_resource type="Script" uid="uid://c4bshsoxnqgf5" path="res://levels/level.gd" id="1_da5si"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://n4idyksvxhwt" path="res://assets/sounds/collectible.wav" id="3_jd1fy"]
 [ext_resource type="Script" uid="uid://uhpl1dxd1pn2" path="res://levels/hazard_spawner.gd" id="3_vmt1o"]
 [ext_resource type="PackedScene" uid="uid://1rfc1wgxwy3q" path="res://UI/HUD.tscn" id="8_cnvg6"]
+[ext_resource type="PackedScene" uid="uid://cts6mc8l1mbkq" path="res://music player/music_player.tscn" id="9_p3adb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ctdcu"]
 texture = ExtResource("1_c57mx")
@@ -261,3 +262,5 @@ autostart = true
 [node name="LevelEnd" type="Area2D" parent="."]
 
 [node name="HUD" parent="." instance=ExtResource("8_cnvg6")]
+
+[node name="MusicPlayer" parent="." instance=ExtResource("9_p3adb")]
