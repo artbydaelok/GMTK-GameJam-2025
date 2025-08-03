@@ -16,20 +16,25 @@ func _ready() -> void:
 
 func on_level_end_triggered(body):
 	if body is Player:
-		body.global_position = start_point.global_position
 		Global.update_score(15)
-		$LoopSFX.play()
-		on_level_loop.emit()
-	###
-	### Spawn new set of collectibles
-	###
+		loop(body)
 	
 func play_collectible_sfx():
 	$CollectibleSFX.play()
+	
+func loop(body):
+	body.global_position = start_point.global_position
+	$LoopSFX.play()
+	on_level_loop.emit()
+	###
+	### Spawn new set of collectibles
+	###
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		var instance = pause_menu.instantiate()
 		add_child(instance)
 		instance.focus()
+	elif event.is_action_pressed("restart"):
+		loop(Global.player)
 	
