@@ -18,6 +18,7 @@ func _ready() -> void:
 	sfx_slider.value = db_to_linear(AudioServer.get_bus_volume_db(sfx_audio_bus))
 
 func focus() -> void:
+	await get_tree().create_timer(.5).timeout
 	$Panel/MarginContainer/VBoxContainer2/Master/MasterSlider.grab_focus()
 	
 func _on_master_slider_value_changed(value: float) -> void:

@@ -145,6 +145,7 @@ func _ready() -> void:
 	set_button_textures("keyboard")
 	
 func focus() -> void:
+	await get_tree().create_timer(.5).timeout
 	$Panel/MarginContainer/Button.grab_focus()
 	
 func set_button_textures(input_device : String):
