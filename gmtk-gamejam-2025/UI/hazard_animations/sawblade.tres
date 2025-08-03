@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://b6s1faf7sfxeo"]
+
+[ext_resource type="Texture2D" uid="uid://d1bdx2phhwabn" path="res://assets/Sprites/CircularSawSpin.png" id="1_bp2k2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yqe4"]
+atlas = ExtResource("1_bp2k2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11xk5"]
+atlas = ExtResource("1_bp2k2")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q26m"]
+atlas = ExtResource("1_bp2k2")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omghm"]
+atlas = ExtResource("1_bp2k2")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13crs"]
+atlas = ExtResource("1_bp2k2")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bybif"]
+atlas = ExtResource("1_bp2k2")
+region = Rect2(320, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yqe4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11xk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3q26m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omghm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13crs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bybif")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]

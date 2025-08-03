@@ -1,0 +1,60 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://dlqv63skxa61v"]
+
+[ext_resource type="Texture2D" uid="uid://hinxcsnkwr1n" path="res://assets/Sprites/turret-color.png" id="1_vl4i3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0wa2"]
+atlas = ExtResource("1_vl4i3")
+region = Rect2(0, 0, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgj2y"]
+atlas = ExtResource("1_vl4i3")
+region = Rect2(16, 0, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hny67"]
+atlas = ExtResource("1_vl4i3")
+region = Rect2(32, 0, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10c8x"]
+atlas = ExtResource("1_vl4i3")
+region = Rect2(48, 0, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cr31"]
+atlas = ExtResource("1_vl4i3")
+region = Rect2(64, 0, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04gnr"]
+atlas = ExtResource("1_vl4i3")
+region = Rect2(80, 0, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xi0gj"]
+atlas = ExtResource("1_vl4i3")
+region = Rect2(96, 0, 16, 19)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0wa2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgj2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hny67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10c8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cr31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04gnr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xi0gj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
