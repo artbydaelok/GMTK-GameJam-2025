@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://1rfc1wgxwy3q"]
+[gd_scene load_steps=7 format=3 uid="uid://1rfc1wgxwy3q"]
 
 [ext_resource type="Script" uid="uid://pnnl03u2h7tq" path="res://UI/hud.gd" id="1_yixhe"]
 [ext_resource type="Script" uid="uid://w0qtwwhbiela" path="res://UI/animated_texture_rect_.gd" id="2_ijstf"]
+[ext_resource type="Texture2D" uid="uid://bd24kj7pk7k6u" path="res://assets/Pixel UI & HUD/Pixel UI & HUD/Sprites/Panels/Black/PanelLargeInactive.png" id="2_uk570"]
 [ext_resource type="SpriteFrames" uid="uid://ckkme50buibio" path="res://UI/hazard_animations/bumper.tres" id="3_4n7mi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yixhe"]
@@ -75,8 +76,19 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_ijstf")
 value = 44.79
 show_percentage = false
 
-[node name="AnimatedTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(42, 42)
 layout_mode = 2
+texture = ExtResource("2_uk570")
+
+[node name="AnimatedTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/TextureRect"]
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("2_ijstf")
 sprites = ExtResource("3_4n7mi")
 auto_play = true
