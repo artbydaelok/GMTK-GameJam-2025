@@ -2,7 +2,7 @@ extends Control
 
 @onready var audio_streamer = $AudioStreamPlayer2D
 
-var level_one = preload("res://levels/metrics_level.tscn")
+var level_one = preload("res://levels/lvl_pipeline.tscn")
 var level_two = preload("res://levels/lvl_footrace.tscn")
 var level_three = preload("res://levels/lvl_uturn.tscn")
 var level_four = preload("res://levels/lvl_winding_path.tscn")

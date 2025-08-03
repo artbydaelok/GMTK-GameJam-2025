@@ -73,7 +73,7 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../LevelTwo")
 focus_next = NodePath("../LevelTwo")
-text = "Level 1"
+text = "Pipeline"
 
 [node name="LevelTwo" type="Button" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 50)
