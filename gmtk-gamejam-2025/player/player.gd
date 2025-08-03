@@ -7,6 +7,9 @@ const JUMP_VELOCITY = -450.0
 
 var facing_right : bool = true
 
+@onready var damage_sfx: AudioStreamPlayer = $DamageSFX
+@onready var jump_sfx: AudioStreamPlayer = $JumpSFX
+
 @onready var player_sprite: Sprite2D = $PlayerSprite
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
@@ -25,6 +28,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor() and not disable_input:
 		velocity.y = JUMP_VELOCITY
+		jump_sfx.play()
 
 
 	# Get the input direction and handle the movement/deceleration.
