@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://12tp6tck5l5"]
+[gd_scene load_steps=12 format=4 uid="uid://12tp6tck5l5"]
 
 [ext_resource type="PackedScene" uid="uid://c1aiw8ttchwiw" path="res://levels/level_base.tscn" id="1_sar5v"]
 [ext_resource type="PackedScene" uid="uid://bir4uii5lvh53" path="res://hazards/stationary/sawblade.tscn" id="2_hlslf"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://t4nwafq0rfkf" path="res://vfx/end_level_portal_vfx.tscn" id="3_4cbwm"]
 [ext_resource type="PackedScene" uid="uid://b2n8n1j8x47p4" path="res://hazards/stationary/turret.tscn" id="3_xyl3v"]
 [ext_resource type="PackedScene" uid="uid://b8cvxql2jny8o" path="res://hazards/stationary/spring.tscn" id="4_wi2c3"]
+[ext_resource type="PackedScene" uid="uid://bcke0u656vo6a" path="res://hazards/stationary/bumper_hazard.tscn" id="6_xawkq"]
 [ext_resource type="PackedScene" uid="uid://dcudr8blm00dg" path="res://Collectables/collectable_spawner.tscn" id="7_826p4"]
 
 [sub_resource type="Gradient" id="Gradient_826p4"]
@@ -46,7 +47,7 @@ position = Vector2(0, -65)
 position = Vector2(0, -65)
 
 [node name="HazardSpawner" parent="." index="8"]
-possible_level_hazards = Array[PackedScene]([ExtResource("2_hlslf"), ExtResource("3_xyl3v")])
+possible_level_hazards = Array[PackedScene]([ExtResource("2_hlslf"), ExtResource("3_xyl3v"), ExtResource("6_xawkq")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd" index="0"]
 position = Vector2(283, 870)
