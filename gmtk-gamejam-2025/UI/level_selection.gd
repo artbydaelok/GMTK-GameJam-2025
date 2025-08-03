@@ -21,22 +21,27 @@ func focus() -> void:
 func _on_level_one_pressed() -> void:
 	play_button_click_sfx()
 	get_tree().change_scene_to_packed(level_one)
+	queue_free()
 
 func _on_level_two_pressed() -> void:
 	play_button_click_sfx()
 	get_tree().change_scene_to_packed(level_two)
+	queue_free()
 
 func _on_level_three_pressed() -> void:
 	play_button_click_sfx()
 	get_tree().change_scene_to_packed(level_three)
+	queue_free()
 
 func _on_level_four_pressed() -> void:
 	play_button_click_sfx()
 	get_tree().change_scene_to_packed(level_four)
+	queue_free()
 
 func _on_level_five_pressed() -> void:
 	play_button_click_sfx()
 	get_tree().change_scene_to_packed(level_five)
+	queue_free()
 
 func _on_back_button_pressed() -> void:
 	play_button_click_sfx()
