@@ -6,6 +6,8 @@ extends Node2D
 @onready var hazard_spawner: Node = $HazardSpawner
 @onready var hazard_spawn_timer: Timer = $HazardSpawnTimer
 
+var pause_menu = preload("res://UI/pause_menu.tscn")
+
 signal on_level_loop
 
 # Called when the node enters the scene tree for the first time.
@@ -24,3 +26,10 @@ func on_level_end_triggered(body):
 	
 func play_collectible_sfx():
 	$CollectibleSFX.play()
+	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		var instance = pause_menu.instantiate()
+		add_child(instance)
+		instance.focus()
+	

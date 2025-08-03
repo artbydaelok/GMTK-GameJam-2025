@@ -59,8 +59,8 @@ func _on_audio_button_pressed() -> void:
 	instance.focus()
 
 
-func _on_hot_to_play_button_pressed() -> void:
-	$Panel/MarginContainer/VBoxContainer2/HotToPlayButton.release_focus()
+func _on_how_to_play_button_pressed() -> void:
+	$Panel/MarginContainer/VBoxContainer2/HowToPlayButton.release_focus()
 	var instance = how_to_play.instantiate()
 	add_child(instance)
 	instance.focus()
