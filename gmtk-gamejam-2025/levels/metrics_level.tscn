@@ -7,12 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://dcudr8blm00dg" path="res://Collectables/collectable_spawner.tscn" id="5_qlpfh"]
 [ext_resource type="PackedScene" uid="uid://t4nwafq0rfkf" path="res://vfx/end_level_portal_vfx.tscn" id="6_qlpfh"]
 
-[sub_resource type="Gradient" id="Gradient_n3pyt"]
+[sub_resource type="Gradient" id="Gradient_qlpfh"]
 offsets = PackedFloat32Array(0.371758, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_qlpfh"]
-gradient = SubResource("Gradient_n3pyt")
+gradient = SubResource("Gradient_qlpfh")
 width = 512
 height = 256
 fill_from = Vector2(0, 1)
