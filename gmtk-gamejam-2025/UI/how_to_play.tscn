@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://t21uiq8vohgr"]
+[gd_scene load_steps=55 format=3 uid="uid://t21uiq8vohgr"]
 
 [ext_resource type="Script" uid="uid://b8up8403ek4vi" path="res://UI/how_to_play.gd" id="1_qfrwe"]
 [ext_resource type="Texture2D" uid="uid://cthp7k5vos5mi" path="res://player/PlayerSheet.png" id="2_6lad0"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://w0qtwwhbiela" path="res://UI/animated_texture_rect_.gd" id="3_1kk7o"]
 [ext_resource type="FontFile" uid="uid://6wtxqi1tje8" path="res://assets/Fonts/Dead Revolver Typeface/Dead Revolver Typeface/Fonts/Game/OTF/DeadRevolverGame.otf" id="3_k7nba"]
 [ext_resource type="Texture2D" uid="uid://bm5f0gb02tgbe" path="res://assets/Pixel UI & HUD/Input20Prompts20Pixel2016C397.png" id="4_qfrwe"]
+[ext_resource type="Texture2D" uid="uid://c4gnl4vh6ajko" path="res://assets/Pixel UI & HUD/Pixel UI & HUD/Sprites/Jewel/Green/Jewel_Spin.png" id="7_hrn3k"]
+[ext_resource type="Texture2D" uid="uid://hinxcsnkwr1n" path="res://assets/Sprites/turret-color.png" id="8_hc7yc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k7nba"]
 atlas = ExtResource("2_6lad0")
@@ -203,6 +205,134 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wdyh"]
+atlas = ExtResource("7_hrn3k")
+region = Rect2(0, 0, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n64if"]
+atlas = ExtResource("7_hrn3k")
+region = Rect2(11, 0, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kded1"]
+atlas = ExtResource("7_hrn3k")
+region = Rect2(22, 0, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rh8nr"]
+atlas = ExtResource("7_hrn3k")
+region = Rect2(33, 0, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ks3p"]
+atlas = ExtResource("7_hrn3k")
+region = Rect2(44, 0, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtgi1"]
+atlas = ExtResource("7_hrn3k")
+region = Rect2(55, 0, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4q3b"]
+atlas = ExtResource("7_hrn3k")
+region = Rect2(66, 0, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dkif"]
+atlas = ExtResource("7_hrn3k")
+region = Rect2(77, 0, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8segw"]
+atlas = ExtResource("7_hrn3k")
+region = Rect2(88, 0, 11, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3rctb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wdyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n64if")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kded1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rh8nr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ks3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtgi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4q3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dkif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8segw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5oi4y"]
+atlas = ExtResource("8_hc7yc")
+region = Rect2(0, 0, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10al3"]
+atlas = ExtResource("8_hc7yc")
+region = Rect2(16, 0, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ea5ys"]
+atlas = ExtResource("8_hc7yc")
+region = Rect2(32, 0, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbe6b"]
+atlas = ExtResource("8_hc7yc")
+region = Rect2(48, 0, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rprw"]
+atlas = ExtResource("8_hc7yc")
+region = Rect2(64, 0, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4lyb"]
+atlas = ExtResource("8_hc7yc")
+region = Rect2(80, 0, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fr3q"]
+atlas = ExtResource("8_hc7yc")
+region = Rect2(96, 0, 16, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ksmnx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5oi4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10al3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ea5ys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbe6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rprw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4lyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fr3q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="HotToPlay" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -250,10 +380,10 @@ vertical_alignment = 1
 [node name="VBoxContainer2" type="VBoxContainer" parent="Panel/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_constants/separation = 50
 alignment = 1
 
 [node name="Move2" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer2/Move2"]
@@ -291,6 +421,7 @@ region_enabled = true
 region_rect = Rect2(17, -1, 16, 16)
 
 [node name="Jump2" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer2/Jump2"]
@@ -305,9 +436,6 @@ sprites = SubResource("SpriteFrames_5knnw")
 frame_index = 1
 auto_play = true
 playing = true
-
-[node name="TextureRect2" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer2/Jump2"]
-layout_mode = 2
 
 [node name="Sprite2D3" type="Sprite2D" parent="Panel/MarginContainer/VBoxContainer2/Jump2"]
 position = Vector2(175, 45)
@@ -324,6 +452,7 @@ region_enabled = true
 region_rect = Rect2(17, -1, 16, 16)
 
 [node name="Teleport2" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer2/Teleport2"]
@@ -339,15 +468,76 @@ frame_index = 1
 auto_play = true
 playing = true
 
-[node name="TextureRect2" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer2/Teleport2"]
-layout_mode = 2
-
 [node name="Sprite2D4" type="Sprite2D" parent="Panel/MarginContainer/VBoxContainer2/Teleport2"]
-position = Vector2(229.995, 45)
+position = Vector2(225, 45)
 scale = Vector2(3, 3)
 texture = ExtResource("4_qfrwe")
 region_enabled = true
 region_rect = Rect2(17, -1, 16, 16)
+
+[node name="Pause" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer2/Pause"]
+layout_mode = 2
+text = "Pause:"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel/MarginContainer/VBoxContainer2/Pause"]
+position = Vector2(175, 25)
+scale = Vector2(3, 3)
+texture = ExtResource("4_qfrwe")
+region_enabled = true
+region_rect = Rect2(17, -1, 16, 16)
+
+[node name="Restart" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer2/Restart"]
+layout_mode = 2
+text = "Restart:"
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel/MarginContainer/VBoxContainer2/Restart"]
+position = Vector2(175, 25)
+scale = Vector2(3, 3)
+texture = ExtResource("4_qfrwe")
+region_enabled = true
+region_rect = Rect2(17, -1, 16, 16)
+
+[node name="Gems" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer2/Gems"]
+layout_mode = 2
+text = "Collect Gems:	"
+
+[node name="Sprite2D4" type="AnimatedSprite2D" parent="Panel/MarginContainer/VBoxContainer2/Gems"]
+position = Vector2(225, 25)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_3rctb")
+
+[node name="Obstacles" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer2/Obstacles"]
+layout_mode = 2
+text = "Avoid Obstacles:"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/MarginContainer/VBoxContainer2/Obstacles"]
+position = Vector2(275, 25)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_ksmnx")
+
+[node name="Goal" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer2/Goal"]
+layout_mode = 2
+text = "Goal: Complete Level Loops"
 
 [node name="Button" type="Button" parent="Panel/MarginContainer"]
 custom_minimum_size = Vector2(0, 50)

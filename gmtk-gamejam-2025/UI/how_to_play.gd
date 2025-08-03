@@ -137,12 +137,12 @@ extends Control
 
 @onready var audio_streamer = $AudioStreamPlayer2D
 
-var controller_name = null
 var button_click_sfx = preload("res://assets/sounds/Click sound 1.wav")
 var button_hover_sfx = preload("res://assets/sounds/Hover over button sound 1.wav")
 
 func _ready() -> void:
-	set_button_textures("keyboard")
+	if !Global.using_controller: set_button_textures("keyboard")
+	elif Global.using_controller: set_button_textures("Controller")
 	
 func focus() -> void:
 	await get_tree().create_timer(.5).timeout
@@ -157,7 +157,9 @@ func set_button_textures(input_device : String):
 		$Panel/MarginContainer/VBoxContainer2/Jump2/Sprite2D4.visible = true
 		$Panel/MarginContainer/VBoxContainer2/Jump2/Sprite2D4.region_rect = keyboard_texture_dictionary.get("Space")
 		$Panel/MarginContainer/VBoxContainer2/Teleport2/Sprite2D4.region_rect = keyboard_texture_dictionary.get("Left Button")
-	elif controller_name.contains("x") or controller_name.contains("X"):
+		$Panel/MarginContainer/VBoxContainer2/Pause/Sprite2D4.region_rect = keyboard_texture_dictionary.get("Escape")
+		$Panel/MarginContainer/VBoxContainer2/Restart/Sprite2D4.region_rect = keyboard_texture_dictionary.get("R")
+	elif Global.controller_name.contains("x") or Global.controller_name.contains("X"):
 		$Panel/MarginContainer/VBoxContainer2/Move2/Sprite2D.region_rect = xbox_texture_dictionary.get("D-Pad Left")
 		$Panel/MarginContainer/VBoxContainer2/Move2/Sprite2D2.region_rect = xbox_texture_dictionary.get("D-Pad Right")
 		$Panel/MarginContainer/VBoxContainer2/Move2/Sprite2D3.visible = true
@@ -165,7 +167,9 @@ func set_button_textures(input_device : String):
 		$Panel/MarginContainer/VBoxContainer2/Jump2/Sprite2D3.region_rect = xbox_texture_dictionary.get("A")
 		$Panel/MarginContainer/VBoxContainer2/Jump2/Sprite2D4.visible = false
 		$Panel/MarginContainer/VBoxContainer2/Teleport2/Sprite2D4.region_rect = xbox_texture_dictionary.get("RT")
-	elif controller_name.contains("ps") or controller_name.contains("PS"):
+		$Panel/MarginContainer/VBoxContainer2/Pause/Sprite2D4.region_rect = xbox_texture_dictionary.get("Menu")
+		$Panel/MarginContainer/VBoxContainer2/Restart/Sprite2D4.region_rect = xbox_texture_dictionary.get("Y")
+	elif Global.controller_name.contains("ps") or Global.controller_name.contains("PS"):
 		$Panel/MarginContainer/VBoxContainer2/Move2/Sprite2D.region_rect = playstation_texture_dictionary.get("D-Pad Left")
 		$Panel/MarginContainer/VBoxContainer2/Move2/Sprite2D2.region_rect = playstation_texture_dictionary.get("D-Pad Right")
 		$Panel/MarginContainer/VBoxContainer2/Move2/Sprite2D3.visible = true
@@ -173,13 +177,13 @@ func set_button_textures(input_device : String):
 		$Panel/MarginContainer/VBoxContainer2/Jump2/Sprite2D3.region_rect = playstation_texture_dictionary.get("X")
 		$Panel/MarginContainer/VBoxContainer2/Jump2/Sprite2D4.visible = false
 		$Panel/MarginContainer/VBoxContainer2/Teleport2/Sprite2D4.region_rect = playstation_texture_dictionary.get("r2")
+		$Panel/MarginContainer/VBoxContainer2/Pause/Sprite2D4.region_rect = playstation_texture_dictionary.get("Start")
+		$Panel/MarginContainer/VBoxContainer2/Restart/Sprite2D4.region_rect = playstation_texture_dictionary.get("Triangle")
 	
 func _input(event):
 	if event is InputEventKey: set_button_textures("keyboard")
 				
-	elif event is InputEventJoypadButton:
-		controller_name = Input.get_joy_name(0)
-		set_button_textures("Controller")
+	elif event is InputEventJoypadButton: set_button_textures("Controller")
 
 
 func _on_button_pressed() -> void:
