@@ -8,12 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://b8cvxql2jny8o" path="res://hazards/stationary/spring.tscn" id="4_wi2c3"]
 [ext_resource type="PackedScene" uid="uid://dcudr8blm00dg" path="res://Collectables/collectable_spawner.tscn" id="7_826p4"]
 
-[sub_resource type="Gradient" id="Gradient_k7ws5"]
+[sub_resource type="Gradient" id="Gradient_826p4"]
 offsets = PackedFloat32Array(0.371758, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_826p4"]
-gradient = SubResource("Gradient_k7ws5")
+gradient = SubResource("Gradient_826p4")
 width = 512
 height = 256
 fill_from = Vector2(0, 1)
