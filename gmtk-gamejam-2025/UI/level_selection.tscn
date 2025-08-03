@@ -122,10 +122,24 @@ text = "Back	"
 wait_time = 0.15
 autostart = true
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="focus_entered" from="Panel/MarginContainer/VBoxContainer/VBoxContainer2/LevelOne" to="." method="_on_entered"]
+[connection signal="mouse_entered" from="Panel/MarginContainer/VBoxContainer/VBoxContainer2/LevelOne" to="." method="_on_entered"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/VBoxContainer2/LevelOne" to="." method="_on_level_one_pressed"]
+[connection signal="focus_entered" from="Panel/MarginContainer/VBoxContainer/VBoxContainer2/LevelTwo" to="." method="_on_entered"]
+[connection signal="mouse_entered" from="Panel/MarginContainer/VBoxContainer/VBoxContainer2/LevelTwo" to="." method="_on_entered"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/VBoxContainer2/LevelTwo" to="." method="_on_level_two_pressed"]
+[connection signal="focus_entered" from="Panel/MarginContainer/VBoxContainer/VBoxContainer2/LevelThree" to="." method="_on_entered"]
+[connection signal="mouse_entered" from="Panel/MarginContainer/VBoxContainer/VBoxContainer2/LevelThree" to="." method="_on_entered"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/VBoxContainer2/LevelThree" to="." method="_on_level_three_pressed"]
+[connection signal="focus_entered" from="Panel/MarginContainer/VBoxContainer/VBoxContainer2/LevelFour" to="." method="_on_entered"]
+[connection signal="mouse_entered" from="Panel/MarginContainer/VBoxContainer/VBoxContainer2/LevelFour" to="." method="_on_entered"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/VBoxContainer2/LevelFour" to="." method="_on_level_four_pressed"]
+[connection signal="focus_entered" from="Panel/MarginContainer/VBoxContainer/VBoxContainer2/LevelFive" to="." method="_on_entered"]
+[connection signal="mouse_entered" from="Panel/MarginContainer/VBoxContainer/VBoxContainer2/LevelFive" to="." method="_on_entered"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/VBoxContainer2/LevelFive" to="." method="_on_level_five_pressed"]
+[connection signal="focus_entered" from="Panel/MarginContainer/VBoxContainer/VBoxContainer2/BackButton" to="." method="_on_entered"]
+[connection signal="mouse_entered" from="Panel/MarginContainer/VBoxContainer/VBoxContainer2/BackButton" to="." method="_on_entered"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/VBoxContainer2/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="timeout" from="FontTimer" to="." method="_on_font_timer_timeout"]
