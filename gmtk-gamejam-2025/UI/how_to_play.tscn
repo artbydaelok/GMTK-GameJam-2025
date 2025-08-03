@@ -1,9 +1,10 @@
-[gd_scene load_steps=34 format=3 uid="uid://t21uiq8vohgr"]
+[gd_scene load_steps=35 format=3 uid="uid://t21uiq8vohgr"]
 
 [ext_resource type="Script" uid="uid://b8up8403ek4vi" path="res://UI/how_to_play.gd" id="1_qfrwe"]
 [ext_resource type="Texture2D" uid="uid://cthp7k5vos5mi" path="res://player/PlayerSheet.png" id="2_6lad0"]
 [ext_resource type="PackedScene" uid="uid://cflhn8u18opvo" path="res://assets/Pixel UI & HUD/button_texture_region.tscn" id="2_qfrwe"]
 [ext_resource type="Script" uid="uid://w0qtwwhbiela" path="res://UI/animated_texture_rect_.gd" id="3_1kk7o"]
+[ext_resource type="FontFile" uid="uid://6wtxqi1tje8" path="res://assets/Fonts/Dead Revolver Typeface/Dead Revolver Typeface/Fonts/Game/OTF/DeadRevolverGame.otf" id="3_k7nba"]
 [ext_resource type="Texture2D" uid="uid://bm5f0gb02tgbe" path="res://assets/Pixel UI & HUD/Input20Prompts20Pixel2016C397.png" id="4_qfrwe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k7nba"]
@@ -229,12 +230,22 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="Label" type="Label" parent="Panel/MarginContainer"]
+[node name="GameTitleContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="GameTitleDrop" type="Label" parent="Panel/MarginContainer/GameTitleContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(170, 100)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 37
+theme_override_colors/font_shadow_color = Color(0, 0.862745, 1, 1)
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("3_k7nba")
+theme_override_font_sizes/font_size = 60
 text = "How To Play"
-horizontal_alignment = 1
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Panel/MarginContainer"]
 layout_mode = 2

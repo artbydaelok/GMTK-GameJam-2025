@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://blcuou85hgl3r"]
+[gd_scene load_steps=4 format=3 uid="uid://blcuou85hgl3r"]
 
 [ext_resource type="Script" uid="uid://dlg8qfu4pkqdl" path="res://UI/audio_settings.gd" id="1_53hro"]
+[ext_resource type="FontFile" uid="uid://6wtxqi1tje8" path="res://assets/Fonts/Dead Revolver Typeface/Dead Revolver Typeface/Fonts/Game/OTF/DeadRevolverGame.otf" id="2_3sb02"]
 [ext_resource type="AudioStream" uid="uid://d3pyh5gcl7aef" path="res://assets/sounds/Blow Torch Loop.wav" id="2_v4rch"]
 
 [node name="AudioSettings" type="Control"]
@@ -29,12 +30,22 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="Label" type="Label" parent="Panel/MarginContainer"]
+[node name="GameTitleContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="GameTitleDrop" type="Label" parent="Panel/MarginContainer/GameTitleContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(170, 100)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_shadow_color = Color(0, 0.862745, 1, 1)
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("2_3sb02")
+theme_override_font_sizes/font_size = 60
 text = "Audio"
-horizontal_alignment = 1
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Panel/MarginContainer"]
 layout_mode = 2
