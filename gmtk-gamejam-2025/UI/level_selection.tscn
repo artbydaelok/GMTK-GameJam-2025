@@ -82,7 +82,7 @@ focus_neighbor_top = NodePath("../LevelOne")
 focus_neighbor_bottom = NodePath("../LevelThree")
 focus_next = NodePath("../LevelThree")
 focus_previous = NodePath("../LevelOne")
-text = "Level 2"
+text = "Foot Race"
 
 [node name="LevelThree" type="Button" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 50)
@@ -91,7 +91,7 @@ focus_neighbor_top = NodePath("../LevelTwo")
 focus_neighbor_bottom = NodePath("../BackButton")
 focus_next = NodePath("../BackButton")
 focus_previous = NodePath("../LevelTwo")
-text = "Level 3"
+text = "U -Turn"
 
 [node name="LevelFour" type="Button" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 50)
@@ -100,7 +100,7 @@ focus_neighbor_top = NodePath("../LevelTwo")
 focus_neighbor_bottom = NodePath("../BackButton")
 focus_next = NodePath("../BackButton")
 focus_previous = NodePath("../LevelTwo")
-text = "Level 4"
+text = "Winding Path"
 
 [node name="LevelFive" type="Button" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 50)
@@ -109,7 +109,7 @@ focus_neighbor_top = NodePath("../LevelTwo")
 focus_neighbor_bottom = NodePath("../BackButton")
 focus_next = NodePath("../BackButton")
 focus_previous = NodePath("../LevelTwo")
-text = "Level 5"
+text = "Drop, Loop"
 
 [node name="BackButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 50)
