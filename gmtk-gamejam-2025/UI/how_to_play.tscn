@@ -361,4 +361,8 @@ focus_next = NodePath(".")
 focus_previous = NodePath(".")
 text = "Back"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="focus_entered" from="Panel/MarginContainer/Button" to="." method="_on_entered"]
+[connection signal="mouse_entered" from="Panel/MarginContainer/Button" to="." method="_on_entered"]
 [connection signal="pressed" from="Panel/MarginContainer/Button" to="." method="_on_button_pressed"]
