@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://biy23q70xcidq"]
+[gd_scene load_steps=11 format=4 uid="uid://biy23q70xcidq"]
 
 [ext_resource type="PackedScene" uid="uid://c1aiw8ttchwiw" path="res://levels/level_base.tscn" id="1_12o3y"]
 [ext_resource type="PackedScene" uid="uid://bir4uii5lvh53" path="res://hazards/stationary/sawblade.tscn" id="2_ncw4t"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b8cvxql2jny8o" path="res://hazards/stationary/spring.tscn" id="5_n3pyt"]
 [ext_resource type="PackedScene" uid="uid://dcudr8blm00dg" path="res://Collectables/collectable_spawner.tscn" id="5_qlpfh"]
 [ext_resource type="PackedScene" uid="uid://t4nwafq0rfkf" path="res://vfx/end_level_portal_vfx.tscn" id="6_qlpfh"]
+[ext_resource type="PackedScene" uid="uid://bcke0u656vo6a" path="res://hazards/stationary/bumper_hazard.tscn" id="7_kaif3"]
 
 [sub_resource type="Gradient" id="Gradient_qlpfh"]
 offsets = PackedFloat32Array(0.371758, 1)
@@ -40,21 +41,13 @@ position = Vector2(-405, 191)
 position = Vector2(-572, 366)
 
 [node name="HazardSpawner" parent="." index="9"]
-possible_level_hazards = Array[PackedScene]([ExtResource("2_ncw4t"), ExtResource("3_n3pyt")])
+possible_level_hazards = Array[PackedScene]([ExtResource("2_ncw4t"), ExtResource("3_n3pyt"), ExtResource("7_kaif3")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd" index="0"]
 position = Vector2(-107, 843)
 shape = SubResource("WorldBoundaryShape2D_n3pyt")
 
-[node name="Turret" parent="." index="12" instance=ExtResource("3_n3pyt")]
-position = Vector2(82, -12)
-
-[node name="Turret2" parent="." index="13" instance=ExtResource("3_n3pyt")]
-position = Vector2(123, -12)
-max_shake = 3.0
-shake_fade = 8.0
-
-[node name="Collectable Spawner" parent="." index="14" instance=ExtResource("5_qlpfh")]
+[node name="Collectable Spawner" parent="." index="12" instance=ExtResource("5_qlpfh")]
 spawn_amount = 6
 
 [node name="CollectiblePoint" type="Node2D" parent="Collectable Spawner" index="0" groups=["SpawnLocation"]]
@@ -75,5 +68,5 @@ position = Vector2(169, 277)
 [node name="CollectiblePoint6" type="Node2D" parent="Collectable Spawner" index="5" groups=["SpawnLocation"]]
 position = Vector2(-190, 267)
 
-[node name="EndLevelPortalVFX" parent="." index="15" instance=ExtResource("6_qlpfh")]
+[node name="EndLevelPortalVFX" parent="." index="13" instance=ExtResource("6_qlpfh")]
 position = Vector2(-89, 844)
