@@ -164,10 +164,25 @@ stretch_mode = 5
 wait_time = 0.15
 autostart = true
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
+
+[connection signal="focus_entered" from="Panel/MarginContainer/VBoxContainer2/PlayButton" to="." method="_on_entered"]
+[connection signal="mouse_entered" from="Panel/MarginContainer/VBoxContainer2/PlayButton" to="." method="_on_entered"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="focus_entered" from="Panel/MarginContainer/VBoxContainer2/AudioButton" to="." method="_on_entered"]
+[connection signal="mouse_entered" from="Panel/MarginContainer/VBoxContainer2/AudioButton" to="." method="_on_entered"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/AudioButton" to="." method="_on_audio_button_pressed"]
+[connection signal="focus_entered" from="Panel/MarginContainer/VBoxContainer2/HowToPlayButton" to="." method="_on_entered"]
+[connection signal="mouse_entered" from="Panel/MarginContainer/VBoxContainer2/HowToPlayButton" to="." method="_on_entered"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
+[connection signal="focus_entered" from="Panel/MarginContainer/VBoxContainer2/ExitButton" to="." method="_on_entered"]
+[connection signal="mouse_entered" from="Panel/MarginContainer/VBoxContainer2/ExitButton" to="." method="_on_entered"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer2/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="focus_entered" from="Panel/MarginContainer/HBoxContainer/SluggerpunkStudiosButton" to="." method="_on_entered"]
+[connection signal="mouse_entered" from="Panel/MarginContainer/HBoxContainer/SluggerpunkStudiosButton" to="." method="_on_entered"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/SluggerpunkStudiosButton" to="." method="_on_sluggerpunk_studios_button_pressed"]
+[connection signal="focus_entered" from="Panel/MarginContainer/HBoxContainer/DiscordButton" to="." method="_on_entered"]
+[connection signal="mouse_entered" from="Panel/MarginContainer/HBoxContainer/DiscordButton" to="." method="_on_entered"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/DiscordButton" to="." method="_on_discord_button_pressed"]
 [connection signal="timeout" from="FontTimer" to="." method="_on_font_timer_timeout"]
